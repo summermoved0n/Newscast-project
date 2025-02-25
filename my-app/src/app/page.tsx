@@ -1,13 +1,16 @@
-import { Sofia_Sans } from 'next/font/google';
+'use client';
 
-const font = Sofia_Sans({ subsets: ['latin'] });
+// import { Sofia_Sans } from 'next/font/google';
+import { getWeatherByQuery, getNews } from '@/lib/api';
+// const font = Sofia_Sans({ subsets: ['latin'] });
 
 export default function Page() {
+  getWeatherByQuery();
+  // getNews();
+
   return (
     <main>
-      <h1 className={font.className}>
-        Indonesia says located black box recorders from crashed plane
-      </h1>
+      <h1>Indonesia says located black box recorders from crashed plane</h1>
     </main>
   );
 }
