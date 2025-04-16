@@ -1,11 +1,8 @@
-'use client';
-
-// import { Sofia_Sans } from 'next/font/google';
 import { getWeatherByQuery, getNews } from '@/lib/api';
-// const font = Sofia_Sans({ subsets: ['latin'] });
 
-export default function Page() {
-  getWeatherByQuery();
+export default async function Page() {
+  const data = await getWeatherByQuery();
+  console.log('resault', data);
   // getNews();
 
   return (

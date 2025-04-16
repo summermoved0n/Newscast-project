@@ -9,7 +9,6 @@ const weatherLocationURL =
   'http://api.openweathermap.org/geo/1.0/direct?q=Canada&limit=1&';
 
 export async function getWeatherByQuery() {
-  console.log(WEATHER_API_KEY);
   const { data } = await axios.get(
     `${weatherLocationURL}appid=${WEATHER_API_KEY}`
   );
@@ -20,7 +19,8 @@ export async function getWeatherByQuery() {
   const weather = await axios.get(
     `https://api.openweathermap.org/data/2.5/weather?lat=${countryLat}&lon=${countryLon}&appid=${WEATHER_API_KEY}`
   );
-  console.log(weather);
+  console.log(weather.data.main);
+  return weather.data;
 }
 
 export async function getNews() {
