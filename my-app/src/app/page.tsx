@@ -1,8 +1,11 @@
 import { getWeatherByQuery, getNews } from '@/lib/api';
+import { changeKelvinToCelsius } from '@/lib/helpers';
 
 export default async function Page() {
-  const data = await getWeatherByQuery();
-  console.log('resault', data);
+  getWeatherByQuery();
+  // const temperatere = weatherData.main.temp;
+  // console.log(temperatere);
+  // console.log('resault', weatherData);
   // getNews();
 
   return (
