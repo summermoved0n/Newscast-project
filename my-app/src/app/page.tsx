@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { getWeatherByQuery, getNews } from '@/lib/api';
 import { changeKelvinToCelsius } from '@/lib/helpers';
 
@@ -14,6 +16,12 @@ export default async function Page() {
     <main>
       <h1>
         Indonesia says located black box recorders from crashed plane{' '}
+        <Image
+          width={100}
+          height={50}
+          src="/images/add-bg-pic.jpg"
+          alt="weather"
+        />
         <span>{temperature}</span>
       </h1>
       <AdvertisementCard news={news} />
