@@ -11,7 +11,6 @@ const getCountryWeatherInfoURL =
   'https://api.openweathermap.org/data/2.5/weather?';
 
 export async function getWeatherByQuery() {
-  console.log(weatherLocationURL);
   const { data } = await axios.get(weatherLocationURL);
 
   const countryLon = data[0].lon;
@@ -28,5 +27,6 @@ export async function getNews() {
   const { data } = await axios.get(
     `${newsBaseURL}apikey=${NEWS_API_KEY}&q=pizza`
   );
-  console.log(data);
+
+  return data.results;
 }

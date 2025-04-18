@@ -1,13 +1,14 @@
 import { getWeatherByQuery, getNews } from '@/lib/api';
 import { changeKelvinToCelsius } from '@/lib/helpers';
 
+import AdvertisementCard from '@/app/components/AdvertisementCard';
+
 export default async function Page() {
   const weather = await getWeatherByQuery();
   const temperature = changeKelvinToCelsius(weather.main.temp);
-  console.log(temperature);
 
-  // const news = await getNews();
-  // console.log(news);
+  const news = await getNews();
+  console.log(news);
 
   return (
     <main>
@@ -15,6 +16,7 @@ export default async function Page() {
         Indonesia says located black box recorders from crashed plane{' '}
         <span>{temperature}</span>
       </h1>
+      <AdvertisementCard news={news} />
     </main>
   );
 }
