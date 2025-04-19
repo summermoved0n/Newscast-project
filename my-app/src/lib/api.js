@@ -5,7 +5,7 @@ const WEATHER_API_KEY = process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY;
 
 const newsBaseURL = 'https://newsdata.io/api/1/latest?';
 
-const countryName = 'Canada';
+const countryName = 'Oshawa';
 const weatherLocationURL = `http://api.openweathermap.org/geo/1.0/direct?q=${countryName}&limit=1&appid=${WEATHER_API_KEY}`;
 const getCountryWeatherInfoURL =
   'https://api.openweathermap.org/data/2.5/weather?';
