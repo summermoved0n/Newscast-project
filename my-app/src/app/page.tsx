@@ -12,7 +12,7 @@ export default async function Page() {
   return (
     <div>
       <Header weather={weather} />
-      <main>{/* <AdvertisementCard news={news} /> */}</main>
+      <main className="px-[20]">{/* <AdvertisementCard news={news} /> */}</main>
     </div>
   );
 }
