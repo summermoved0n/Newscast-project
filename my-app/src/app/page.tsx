@@ -2,6 +2,7 @@ import { getWeatherByQuery, getNews } from '@/lib/api';
 
 import AdvertisementCard from '@/app/components/AdvertisementCard';
 import Header from '@/app/components/Header';
+import Hero from '@/app/components/Hero';
 
 export default async function Page() {
   const weather = await getWeatherByQuery();
@@ -12,7 +13,10 @@ export default async function Page() {
   return (
     <div>
       <Header weather={weather} />
-      <main className="px-[20]">{/* <AdvertisementCard news={news} /> */}</main>
+      <main className="px-[20]">
+        <Hero />
+        {/* <AdvertisementCard news={news} /> */}
+      </main>
     </div>
   );
 }

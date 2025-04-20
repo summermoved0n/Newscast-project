@@ -44,7 +44,7 @@ export default function Header({ weather }) {
           alt="clock icon"
         />
         <p className="mr-[14]">{dataToday}</p>
-        <p className="flex items-center px-[7] text-white bg-red-400 h-[100%] mr-[17]">
+        <p className="flex items-center px-[7] text-white bg-red-500 h-[100%] mr-[17]">
           Breaking News
         </p>
         <p>
