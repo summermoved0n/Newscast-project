@@ -16,7 +16,6 @@ export default function Hero() {
     >
       <Link href={'/'}>
         <Image
-          className=""
           width={247}
           height={64}
           src="/images/Logo-min.png"
