@@ -3,7 +3,7 @@ import axios from 'axios';
 const NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_DATA_API_KEY;
 const WEATHER_API_KEY = process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY;
 
-const newsBaseURL = 'https://newsdata.io/api/1/latest?';
+const newsBaseURL = 'https://newsdata.io/api/1/';
 
 const countryName = 'Oshawa';
 const weatherLocationURL = `http://api.openweathermap.org/geo/1.0/direct?q=${countryName}&limit=1&appid=${WEATHER_API_KEY}`;
@@ -25,7 +25,7 @@ export async function getWeatherByQuery() {
 
 export async function getNews() {
   const { data } = await axios.get(
-    `${newsBaseURL}apikey=${NEWS_API_KEY}&q=pizza`
+    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=top&language=en`
   );
 
   return data.results;

@@ -15,7 +15,7 @@ export default function Header({ weather }) {
 
   return (
     <header
-      className={`${font.className} px-[20] bg-white flex h-[42] items-center justify-between`}
+      className={`${font.className} bg-white flex h-[42] items-center justify-between shadow-[0_1px_10px_0_rgba(246,80,80,0.15)] text-xs mb-[26] px-[20]`}
     >
       <div className="flex items-center h-[100%]">
         <Image

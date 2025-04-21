@@ -38,3 +38,17 @@ export const correctFormOfData = () => {
 
   return `${weekday}, ${day} ${month} ${year}`;
 };
+
+export const changeDataFormat = (value) => {
+  const date = new Date(value.replace(' ', 'T'));
+
+  const options = { day: '2-digit', month: 'short', year: 'numeric' };
+  const formatted = date.toLocaleDateString('en-GB', options);
+
+  return formatted;
+};
+
+export const capitalizeFirstLetter = (word) => {
+  if (!word) return '';
+  return String(word).charAt(0).toUpperCase() + String(word).slice(1);
+};
