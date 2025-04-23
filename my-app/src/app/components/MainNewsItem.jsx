@@ -1,8 +1,4 @@
-import {
-  changeDataFormat,
-  capitalizeFirstLetter,
-  getRandomColor,
-} from '@/lib/helpers';
+import { changeDataFormat, capitalizeFirstLetter } from '@/lib/helpers';
 
 import ColourTitleBg from '@/app/components/ColourTitleBg';
 

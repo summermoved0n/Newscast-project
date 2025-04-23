@@ -19,7 +19,10 @@ export default async function Page() {
         <Hero />
         <Navigation />
         {/* <MainNews news={news} /> */}
-        <DontMiss />
+        <div className="grid grid-cols-[2fr_1fr] gap-[34]">
+          <DontMiss />
+          <div></div>
+        </div>
       </main>
     </div>
   );

@@ -60,4 +60,4 @@ export const getRandomColor = () => {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
-}
+};

@@ -2,7 +2,7 @@ import MainNewsItem from '@/app/components/MainNewsItem';
 
 export default function MainNews({ news }) {
   return (
-    <section className="grid grid-cols-[2fr_1fr_1fr] grid-rows-2 gap-[15] mb-[50]">
+    <section className="grid grid-cols-[2fr_1fr_1fr] grid-rows-2 gap-[15] mb-[58]">
       <MainNewsItem
         article_id={news[0].article_id}
         category={news[0].category}
