@@ -1,9 +1,9 @@
-'use client';
+import ColourTitleBg from '@/app/components/ColourTitleBg';
 
 export default function DontMiss() {
   return (
     <section className="">
-      <div>DontMiss</div>
+      <ColourTitleBg isNeedSofiaFont={false}>DontMiss</ColourTitleBg>
       <div></div>
     </section>
   );
