@@ -40,6 +40,7 @@ export const correctFormOfData = () => {
 };
 
 export const changeDataFormat = (value) => {
+  console.log(value);
   const date = new Date(value.replace(' ', 'T'));
 
   const options = { day: '2-digit', month: 'short', year: 'numeric' };

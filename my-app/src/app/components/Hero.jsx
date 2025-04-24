@@ -31,7 +31,7 @@ export default function Hero() {
           <p className="text-red-500">Experience the change!</p>
         </div>
 
-        <Button text={'PURCHASE NOW'} />
+        <Button>PURCHASE NOW</Button>
       </div>
     </section>
   );

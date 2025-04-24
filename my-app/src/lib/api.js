@@ -30,3 +30,19 @@ export async function getNews() {
 
   return data.results;
 }
+
+export async function getImportantNews() {
+  const { data } = await axios.get(
+    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=important&language=en`
+  );
+
+  return data.results;
+}
+
+export async function getEntertainmentNews() {
+  const { data } = await axios.get(
+    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=entertainment&language=en`
+  );
+
+  return data.results;
+}

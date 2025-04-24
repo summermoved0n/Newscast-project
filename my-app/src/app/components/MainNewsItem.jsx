@@ -18,9 +18,9 @@ export default function MainNewsItem({
       style={{ backgroundImage: `url(${image_url})` }}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
-      <ColourTitleBg className="relative z-10">
-        {capitalizeFirstLetter(category)}
-      </ColourTitleBg>
+      <span className="relative z-10">
+        <ColourTitleBg>{capitalizeFirstLetter(category)}</ColourTitleBg>
+      </span>
       <div className="relative z-10 text-white">
         <p className="text-xs">
           {!creator || creator === '' ? 'Unknown' : creator} -{' '}
