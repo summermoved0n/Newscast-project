@@ -18,7 +18,7 @@ export default function Entertainment({ news }) {
           <NextPageBtn />
         </div>
       </div>
-      <div className="grid grid-cols-[1fr] gap-[24]">
+      <div className="grid grid-cols-[1fr] grid-rows-[5fr_1fr] gap-[24]">
         <MainNewsItem
           article_id={news[0].article_id}
           category={news[0].category}

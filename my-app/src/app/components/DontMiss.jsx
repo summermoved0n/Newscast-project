@@ -23,7 +23,14 @@ export default function DontMiss({news}) {
         </div>
       </div>
       <div className="grid grid-cols-[1fr_1fr] gap-[30]">
-        <BigAdItem />
+        <BigAdItem
+          article_id={news[0].article_id}
+          category={news[0].category}
+          image_url={news[0].image_url}
+          creator={news[0].creator}
+          title={news[0].title}
+          pubDate={news[0].pubDate}
+        />
         <ul className="flex flex-col justify-between">
           <SmallAdItem
             article_id={news[1].article_id}

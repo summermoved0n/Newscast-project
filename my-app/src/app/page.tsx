@@ -10,11 +10,8 @@ import Entertainment from '@/app/components/Entertainment';
 
 export default async function Page() {
   // const weather = await getWeatherByQuery();
-
-  const news = await getNews();
-
-  // const entertainment = await getEntertainmentNews();
-  // console.log(entertainment);
+  // const news = await getNews();
+  const entertainment = await getEntertainmentNews();
 
   return (
     <div className="font-normal">
@@ -22,12 +19,12 @@ export default async function Page() {
       <main className="px-[20]">
         <Hero />
         <Navigation />
-        <MainNews news={news} />
+        {/* <MainNews news={news} /> */}
         <div className="grid grid-cols-[2fr_1fr] gap-[34] mb-[30]">
           {/* <DontMiss news={entertainment} /> */}
-          {/* <RecentNews /> */}
+          {/* <RecentNews news={news} /> */}
         </div>
-        {/* <Entertainment news={entertainment} /> */}
+        <Entertainment news={entertainment} />
       </main>
     </div>
   );
