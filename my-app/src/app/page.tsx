@@ -9,20 +9,20 @@ import RecentNews from '@/app/components/RecentNews';
 import Entertainment from '@/app/components/Entertainment';
 
 export default async function Page() {
-  // const weather = await getWeatherByQuery();
-  // const news = await getNews();
+  const weather = await getWeatherByQuery();
+  const news = await getNews();
   const entertainment = await getEntertainmentNews();
 
   return (
     <div className="font-normal">
-      {/* <Header weather={weather} /> */}
+      <Header weather={weather} news={news} />
       <main className="px-[20]">
         <Hero />
         <Navigation />
-        {/* <MainNews news={news} /> */}
+        <MainNews news={news} />
         <div className="grid grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          {/* <DontMiss news={entertainment} /> */}
-          {/* <RecentNews news={news} /> */}
+          <DontMiss news={entertainment} />
+          <RecentNews news={news} />
         </div>
         <Entertainment news={entertainment} />
       </main>

@@ -19,7 +19,9 @@ export default function MainNewsItem({
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <span className="relative z-10">
-        <ColourTitleBg>{capitalizeFirstLetter(category)}</ColourTitleBg>
+        <ColourTitleBg className="text-xl" isNeedSofiaFont={true}>
+          {capitalizeFirstLetter(category)}
+        </ColourTitleBg>
       </span>
       <div className="relative z-10 text-white">
         <p className="text-xs">

@@ -18,7 +18,7 @@ export default function RecentNews({ news }) {
           creator={news[4].creator}
           title={news[4].title}
           pubDate={news[4].pubDate}
-          isSmallSize={true}
+          imageSize={'small'}
         />
 
         <SmallAdItem
@@ -27,7 +27,7 @@ export default function RecentNews({ news }) {
           creator={news[5].creator}
           title={news[5].title}
           pubDate={news[5].pubDate}
-          isSmallSize={true}
+          imageSize={'small'}
         />
 
         <SmallAdItem
@@ -36,7 +36,7 @@ export default function RecentNews({ news }) {
           creator={news[6].creator}
           title={news[6].title}
           pubDate={news[6].pubDate}
-          isSmallSize={true}
+          imageSize={'small'}
         />
 
         <SmallAdItem
@@ -45,16 +45,16 @@ export default function RecentNews({ news }) {
           creator={news[7].creator}
           title={news[7].title}
           pubDate={news[7].pubDate}
-          isSmallSize={true}
+          imageSize={'small'}
         />
-        
+
         <SmallAdItem
           article_id={news[8].article_id}
           image={news[8].image_url}
           creator={news[8].creator}
           title={news[8].title}
           pubDate={news[8].pubDate}
-          isSmallSize={true}
+          imageSize={'small'}
         />
       </ul>
     </section>

@@ -2,11 +2,17 @@
 
 import Image from 'next/image';
 
-export default function PrevPageBtn() {
+export default function PrevPageBtn({ page, setPage, pageCount }) {
+  const prevPage = () => {
+    if (page > 0) setPage((p) => p - 1);
+  };
+
   return (
     <button
       type="button"
-      className="flex justify-center items-center w-[24] h-[24] bg-red-500 text-white hover:bg-red-600 active:bg-red-400 transition-all duration-300 ease-liner"
+      onClick={prevPage}
+      disabled={page === 0}
+      className="flex justify-center items-center w-[24] h-[24] bg-red-500 text-white hover:bg-red-600 active:bg-red-400 transition-all duration-300 ease-liner disabled:bg-red-200 disabled:cursor-not-allowed"
     >
       <Image
         className="invert-[1]"

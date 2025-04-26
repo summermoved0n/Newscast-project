@@ -8,7 +8,7 @@ import SocialMediaBlock from './SocialMediaBlock';
 
 const font = Sofia_Sans({ subsets: ['latin'] });
 
-export default function Header({ weather }) {
+export default function Header({ weather, news }) {
   const temperature = changeKelvinToCelsius(weather.main.temp);
   const cityName = weather.name;
   const dataToday = correctFormOfData();
@@ -47,9 +47,7 @@ export default function Header({ weather }) {
         <p className="flex items-center px-[7] text-white bg-red-500 h-[100%] mr-[17]">
           Breaking News
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, hic?
-        </p>
+        <p>{news[0].title}</p>
       </div>
       <SocialMediaBlock />
     </header>
