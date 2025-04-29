@@ -2,6 +2,9 @@
 
 import clsx from 'clsx';
 
+import { Sofia_Sans } from 'next/font/google';
+const font = Sofia_Sans({ subsets: ['latin'] });
+
 import { changeDataFormat, capitalizeFirstLetter } from '@/lib/helpers';
 import ColourTitleBg from '@/app/components/ColourTitleBg';
 
@@ -54,7 +57,7 @@ export default function SmallAdItem({
       <div className="flex flex-col justify-center max-w-[250px]">
         <p className="text-[#393939] text-xs mb-[6]">
           {!creator || creator === '' ? 'Unknown' : creator} -{' '}
-          <span className="text-[rgba(57,57,57,0.6)]">
+          <span className={`${font.className} text-[rgba(57,57,57,0.6)]`}>
             {changeDataFormat(pubDate)}
           </span>
         </p>

@@ -1,12 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-
-import Button from './Button';
-
-import { Sofia_Sans } from 'next/font/google';
 import Link from 'next/link';
-const font = Sofia_Sans({ subsets: ['latin'] });
+
+import PurchaseNow from '@/app/components/PurchaseNow';
 
 export default function Hero() {
   return (
@@ -22,17 +19,7 @@ export default function Hero() {
           alt="logo icon"
         />
       </Link>
-      <div className="bg-[url('/images/add-bg-pic.jpg')] bg-cover bg-center flex justify-between items-center px-[26] py-[16]">
-        <div className="text-sm">
-          <p className={`${font.className} text-white`}>
-            Best Selling <b>BLOG</b> and <b>MAGAZINE</b>
-            <br /> Theme of All Time
-          </p>
-          <p className="text-red-500">Experience the change!</p>
-        </div>
-
-        <Button>PURCHASE NOW</Button>
-      </div>
+      <PurchaseNow />
     </section>
   );
 }

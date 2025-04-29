@@ -1,4 +1,11 @@
-import { getWeatherByQuery, getNews, getEntertainmentNews } from '@/lib/api';
+import {
+  getWeatherByQuery,
+  getNews,
+  getEntertainmentNews,
+  getSportsNews,
+  getLifeStyleNews,
+  getPixabayVideo,
+} from '@/lib/api';
 
 import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
@@ -7,24 +14,39 @@ import MainNews from '@/app/components/MainNews';
 import DontMiss from '@/app/components/DontMiss';
 import RecentNews from '@/app/components/RecentNews';
 import Entertainment from '@/app/components/Entertainment';
+import Sports from '@/app/components/Sports';
+import LifeStyle from '@/app/components/LifeStyle';
+import PurchaseNow from '@/app/components/PurchaseNow';
+import Video from '@/app/components/Video';
 
 export default async function Page() {
-  const weather = await getWeatherByQuery();
-  const news = await getNews();
-  const entertainment = await getEntertainmentNews();
+  // const weather = await getWeatherByQuery();
+  // const news = await getNews();
+  // const entertainment = await getEntertainmentNews();
+  // const sport = await getSportsNews()
+  // const lifeStyle = await getLifeStyleNews();
+  const pixabayVideo = await getPixabayVideo();
 
   return (
     <div className="font-normal">
-      <Header weather={weather} news={news} />
+      {/* <Header weather={weather} news={news} /> */}
       <main className="px-[20]">
         <Hero />
         <Navigation />
-        <MainNews news={news} />
-        <div className="grid grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          <DontMiss news={entertainment} />
-          <RecentNews news={news} />
+        {/* <MainNews news={news} /> */}
+        <div className="grid grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
+          {/* <DontMiss news={entertainment} /> */}
+          {/* <RecentNews news={news} /> */}
         </div>
-        <Entertainment news={entertainment} />
+        {/* <Entertainment news={entertainment} /> */}
+        <div className="grid grid-cols-[3fr_1fr] gap-[34] mb-[50]">
+          <div className="flex flex-col gap-[50px]">
+            {/* <Sports news={news} />
+            <LifeStyle news={news} /> */}
+            <PurchaseNow />
+            <Video video={pixabayVideo} />
+          </div>
+        </div>
       </main>
     </div>
   );
