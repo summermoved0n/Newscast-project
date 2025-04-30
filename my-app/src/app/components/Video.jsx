@@ -20,9 +20,7 @@ export default function Video({ video }) {
         </div>
       </div>
       <div className="grid grid-cols-[1fr] grid-rows-[2fr_1fr] gap-[30]">
-        <VideoItem
-          src={video[0].videos.medium.url}
-        />
+        <VideoItem src={video[1].videos.medium.url} />
       </div>
     </section>
   );
