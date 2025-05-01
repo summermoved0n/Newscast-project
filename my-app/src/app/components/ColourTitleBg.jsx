@@ -11,6 +11,7 @@ const font = Sofia_Sans({ subsets: ['latin'] });
 export default function ColourTitleBg({
   children,
   isNeedSofiaFont,
+  isMediaCard,
   className = '',
 }) {
   const [color, setColor] = useState('#808080');
@@ -22,7 +23,8 @@ export default function ColourTitleBg({
   return (
     <p
       className={clsx(
-        `${className} w-fit text-white text-xs font-normal py-[6] px-[8]`,
+        isMediaCard ? 'p-[12]' : 'py-[6] px-[8]',
+        `${className} w-fit text-white text-xs font-normal`,
         isNeedSofiaFont && font.className
       )}
       style={{ backgroundColor: color }}
