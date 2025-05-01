@@ -8,7 +8,14 @@ import ColourTitleBg from '@/app/components/ColourTitleBg';
 import { Sofia_Sans } from 'next/font/google';
 const font = Sofia_Sans({ subsets: ['latin'] });
 
-export default function CustomPlayer({ src, small }) {
+export default function CustomPlayer({
+  src,
+  small,
+  creator,
+  views,
+  type,
+  tags,
+}) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
@@ -43,7 +50,7 @@ export default function CustomPlayer({ src, small }) {
     >
       <span className={`top-[25] left-[25] absolute z-10`}>
         <ColourTitleBg isNeedSofiaFont>
-          {capitalizeFirstLetter('category')}
+          {capitalizeFirstLetter(type)}
         </ColourTitleBg>
       </span>
       <video
@@ -75,21 +82,20 @@ export default function CustomPlayer({ src, small }) {
       {small ? (
         <div className={`mt-[25]`}>
           <p className={`${font.className} text-[#393939] text-xs mb-[6]`}>
-            Lorem ipsum. -{' '}
-            <span className={`text-[rgba(57,57,57,0.6)]`}>Lorem, ipsum.</span>
+            {creator} -{' '}
+            <span className={`text-[rgba(57,57,57,0.6)]`}>{views} views</span>
           </p>
           <p className="text-[#393939] text-base line-clamp-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            {capitalizeFirstLetter(tags)}
           </p>
         </div>
       ) : (
         <div className={`bottom-[50] left-[25] absolute z-10 text-white`}>
           <p className={`${font.className} text-xs mb-[6]`}>
-            Lorem ipsum. - Lorem, ipsum.
+            {creator} - {views} views
           </p>
           <p className="font-medium text-4xl line-clamp-2 w-[50%]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem,
-            ipsum dolor sit amet consectetur adipisicing elit. Quaerat, officia?
+            {capitalizeFirstLetter(tags)}
           </p>
         </div>
       )}

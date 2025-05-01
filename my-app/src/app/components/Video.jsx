@@ -19,21 +19,36 @@ export default function Video({ video }) {
         </div>
       </div>
       <div className="grid grid-cols-[1fr] grid-rows-[2fr_1fr] gap-[24]">
-        <VideoItem src={video[1].videos.medium.url} creator={video[1].user} />
+        <VideoItem
+          src={video[1].videos.medium.url}
+          creator={video[1].user}
+          views={video[1].views}
+          type={video[1].type}
+          tags={video[1].tags}
+        />
         <div className="flex justify-between gap-[24]">
           <VideoItem
             src={video[2].videos.small.url}
             creator={video[2].user}
+            views={video[2].views}
+            type={video[2].type}
+            tags={video[2].tags}
             small
           />
           <VideoItem
             src={video[3].videos.small.url}
             creator={video[3].user}
+            views={video[3].views}
+            type={video[3].type}
+            tags={video[3].tags}
             small
           />
           <VideoItem
             src={video[5].videos.small.url}
             creator={video[5].user}
+            views={video[5].views}
+            type={video[5].type}
+            tags={video[5].tags}
             small
           />
         </div>
