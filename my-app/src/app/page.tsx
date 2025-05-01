@@ -18,6 +18,7 @@ import Sports from '@/app/components/Sports';
 import LifeStyle from '@/app/components/LifeStyle';
 import PurchaseNow from '@/app/components/PurchaseNow';
 import Video from '@/app/components/Video';
+import StayConnected from '@/app/components/StayConnected';
 
 export default async function Page() {
   // const weather = await getWeatherByQuery();
@@ -45,6 +46,9 @@ export default async function Page() {
             <LifeStyle news={news} /> */}
             <PurchaseNow />
             <Video video={pixabayVideo} />
+          </div>
+          <div>
+            <StayConnected />
           </div>
         </div>
       </main>
