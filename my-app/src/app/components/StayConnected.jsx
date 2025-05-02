@@ -23,10 +23,10 @@ export default function StayConnected() {
               src={'/icons/facebook-icon.svg'}
               alt="facebook"
             />
-            <div className="font-medium text-xs">
-              <p>15000</p>
-              <p>Followers</p>
-            </div>
+            <span className="flex flex-col font-medium text-xs">
+              <span>15000</span>
+              <span>Followers</span>
+            </span>
           </ColourTitleBg>
         </li>
         <li>
@@ -38,10 +38,10 @@ export default function StayConnected() {
               src={'/icons/instagram-icon.svg'}
               alt="instagram"
             />
-            <div className="font-medium text-xs">
-              <p>15000</p>
-              <p>Followers</p>
-            </div>
+            <span className="flex flex-col font-medium text-xs">
+              <span>15000</span>
+              <span>Followers</span>
+            </span>
           </ColourTitleBg>
         </li>
         <li>
@@ -53,10 +53,10 @@ export default function StayConnected() {
               src={'/icons/youtube-icon.svg'}
               alt="facebook"
             />
-            <div className="font-medium text-xs">
-              <p>15000</p>
-              <p>Followers</p>
-            </div>
+            <span className="flex flex-col font-medium text-xs">
+              <span>15000</span>
+              <span>Followers</span>
+            </span>
           </ColourTitleBg>
         </li>
         <li>
@@ -68,10 +68,10 @@ export default function StayConnected() {
               src={'/icons/twitter-icon.svg'}
               alt="facebook"
             />
-            <div className="font-medium text-xs">
-              <p>15000</p>
-              <p>Followers</p>
-            </div>
+            <span className="flex flex-col font-medium text-xs">
+              <span>15000</span>
+              <span>Followers</span>
+            </span>
           </ColourTitleBg>
         </li>
         <li>
@@ -83,10 +83,10 @@ export default function StayConnected() {
               src={'/icons/be-icon.svg'}
               alt="facebook"
             />
-            <div className="font-medium text-xs">
-              <p>15000</p>
-              <p>Followers</p>
-            </div>
+            <span className="flex flex-col font-medium text-xs">
+              <span>15000</span>
+              <span>Followers</span>
+            </span>
           </ColourTitleBg>
         </li>
         <li>
@@ -98,10 +98,10 @@ export default function StayConnected() {
               src={'/icons/ball-icon.svg'}
               alt="facebook"
             />
-            <div className="font-medium text-xs">
-              <p>15000</p>
-              <p>Followers</p>
-            </div>
+            <span className="flex flex-col font-medium text-xs">
+              <span>15000</span>
+              <span>Followers</span>
+            </span>
           </ColourTitleBg>
         </li>
       </ul>
