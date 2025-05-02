@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import SectionTitle from '@/app/components/SectionTitle';
 import ColourTitleBg from './ColourTitleBg';
+import EmailForm from './EmailForm';
+import SofiaFontText from './SofiaFontText';
 
 export default function StayConnected() {
   return (
@@ -13,7 +15,7 @@ export default function StayConnected() {
           Stay Connected
         </SectionTitle>
       </div>
-      <ul className="flex flex-wrap justify-between gap-[10]">
+      <ul className="flex flex-wrap justify-between gap-[10] mb-[26]">
         <li>
           <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
             <Image
@@ -51,7 +53,7 @@ export default function StayConnected() {
               width={20}
               height={20}
               src={'/icons/youtube-icon.svg'}
-              alt="facebook"
+              alt="youtube"
             />
             <span className="flex flex-col font-medium text-xs">
               <span>15000</span>
@@ -66,7 +68,7 @@ export default function StayConnected() {
               width={20}
               height={20}
               src={'/icons/twitter-icon.svg'}
-              alt="facebook"
+              alt="twitter"
             />
             <span className="flex flex-col font-medium text-xs">
               <span>15000</span>
@@ -81,7 +83,7 @@ export default function StayConnected() {
               width={20}
               height={20}
               src={'/icons/be-icon.svg'}
-              alt="facebook"
+              alt="be"
             />
             <span className="flex flex-col font-medium text-xs">
               <span>15000</span>
@@ -96,7 +98,7 @@ export default function StayConnected() {
               width={20}
               height={20}
               src={'/icons/ball-icon.svg'}
-              alt="facebook"
+              alt="ball"
             />
             <span className="flex flex-col font-medium text-xs">
               <span>15000</span>
@@ -105,6 +107,10 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
       </ul>
+      <div className="bg-[url(/images/stay-connected-ad.jpg)] bg-cover bg-center w-full h-[290] flex justify-center items-center mb-[24]">
+        <SofiaFontText className="text-white text-4xl">Ad</SofiaFontText>
+      </div>
+      <EmailForm />
     </section>
   );
 }
