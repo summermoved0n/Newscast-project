@@ -19,6 +19,8 @@ import LifeStyle from '@/app/components/LifeStyle';
 import PurchaseNow from '@/app/components/PurchaseNow';
 import Video from '@/app/components/Video';
 import StayConnected from '@/app/components/StayConnected';
+import Categories from '@/app/components/Categories';
+import FollowUs from '@/app/components/FollowUs';
 
 export default async function Page() {
   // const weather = await getWeatherByQuery();
@@ -31,7 +33,7 @@ export default async function Page() {
   return (
     <div className="font-normal">
       {/* <Header weather={weather} news={news} /> */}
-      <main className="px-[20]">
+      <main className="px-[20] mb-[50]">
         <Hero />
         <Navigation />
         {/* <MainNews news={news} /> */}
@@ -47,11 +49,13 @@ export default async function Page() {
             <PurchaseNow />
             <Video video={pixabayVideo} />
           </div>
-          <div>
+          <div className="flex flex-col gap-[24]">
             <StayConnected />
+            <Categories />
           </div>
         </div>
       </main>
+      <FollowUs />
     </div>
   );
 }

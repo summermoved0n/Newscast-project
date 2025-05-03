@@ -3,7 +3,7 @@
 import React from 'react';
 import { Field } from 'formik';
 
-export default function InputField({ label, id, text = '' }) {
+export default function InputField({ label, id, className = '', ...rest }) {
   return (
     <div className="flex flex-col">
       {label && (
@@ -12,9 +12,9 @@ export default function InputField({ label, id, text = '' }) {
         </label>
       )}
       <Field
-        text={text}
+        {...rest}
         id={id}
-        className="p-3 h-11 text-sm border border-gray-300"
+        className={`${className} pl-[25%] h-[40px] text-sm outline-none`}
       />
     </div>
   );
