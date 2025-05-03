@@ -37,9 +37,11 @@ export default function FollowUs() {
         src={'/images/follow-us-last-pic.jpg'}
         alt="man in suit"
       />
-      <button
+      <a
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-[146] min-h-[146] rounded-full bg-[rgba(194,55,133,0.6)] flex flex-col items-center justify-center gap-[13]"
-        type="button"
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Image
           className="invert-[1]"
@@ -51,7 +53,7 @@ export default function FollowUs() {
         <SofiaFontText className="text-lg font-medium text-white">
           Follow us
         </SofiaFontText>
-      </button>
+      </a>
     </section>
   );
 }

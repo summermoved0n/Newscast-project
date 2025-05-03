@@ -28,7 +28,7 @@ export default function Categories() {
       </div>
       <ul className="flex flex-col justify-between gap-[12]">
         {categoriesData.map(({ categorie, value }) => (
-          <li className="flex items-center justify-between">
+          <li key={categorie} className="flex items-center justify-between">
             <div className="flex items-center">
               <Image
                 className="mr-[12]"

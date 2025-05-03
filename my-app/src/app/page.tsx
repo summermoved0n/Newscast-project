@@ -21,6 +21,7 @@ import Video from '@/app/components/Video';
 import StayConnected from '@/app/components/StayConnected';
 import Categories from '@/app/components/Categories';
 import FollowUs from '@/app/components/FollowUs';
+import Footer from '@/app/components/Footer';
 
 export default async function Page() {
   // const weather = await getWeatherByQuery();
@@ -56,6 +57,7 @@ export default async function Page() {
         </div>
       </main>
       <FollowUs />
+      <Footer />
     </div>
   );
 }
