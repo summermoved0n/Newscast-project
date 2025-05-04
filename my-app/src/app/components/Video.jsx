@@ -5,7 +5,7 @@ import VideoItem from '@/app/components/VideoItem';
 export default function Video({ video }) {
   console.log(video);
   return (
-    <section>
+    <section className="mb-[0]">
       <div className="flex justify-between mb-[40] relative border-b border-[#393939] pb-[14]  after:w-[140] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour fontWeight={500}>
           Video

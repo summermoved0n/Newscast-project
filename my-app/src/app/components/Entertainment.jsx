@@ -18,7 +18,7 @@ export default function Entertainment({ news }) {
   const mainItem = news[startIndex];
   const smallItems = news.slice(startIndex + 1, startIndex + 4);
   return (
-    <section className="">
+    <section className="mb-[150]">
       <div className="flex justify-between mb-[24] relative border-b border-[#393939] pb-[14]  after:w-[140] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour={true} fontWeight={500}>
           Entertainment
