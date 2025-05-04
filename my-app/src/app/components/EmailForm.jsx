@@ -10,7 +10,7 @@ const initialValues = {
   email: '',
 };
 
-export default function EmailForm({ onSubmit }) {
+export default function EmailForm({ onSubmit, isNeedTitle, isFooterForm }) {
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
     resetForm();
@@ -19,11 +19,17 @@ export default function EmailForm({ onSubmit }) {
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       {({ values }) => (
-        <Form className="bg-gray-300 p-[25] flex flex-col items-center">
-          <p className="text-lg text-[#2d2d2d] font-medium mb-[24]">
-            Get Latest Updates
-          </p>
-          <div className="flex flex-col gap-[10]">
+        <Form
+          className={`${
+            !isFooterForm && 'bg-gray-300 p-[25]'
+          } flex flex-col items-center`}
+        >
+          {isNeedTitle && (
+            <p className="text-lg text-[#2d2d2d] font-medium mb-[24]">
+              {isNeedTitle}
+            </p>
+          )}
+          <div className="flex flex-col gap-[10] w-full">
             <InputField
               className="placeholder:text-[#2d2d2d]"
               required

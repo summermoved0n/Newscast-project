@@ -110,7 +110,7 @@ export default function StayConnected() {
       <div className="bg-[url(/images/stay-connected-ad.jpg)] bg-cover bg-center w-full h-[290] flex justify-center items-center mb-[24]">
         <SofiaFontText className="text-white text-4xl">Ad</SofiaFontText>
       </div>
-      <EmailForm />
+      <EmailForm isNeedTitle={'Get Latest Updates'} />
     </section>
   );
 }

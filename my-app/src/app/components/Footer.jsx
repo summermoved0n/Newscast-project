@@ -3,6 +3,18 @@ import Image from 'next/image';
 import SofiaFontText from './SofiaFontText';
 import SocialMediaBlock from './SocialMediaBlock';
 import SectionTitle from './SectionTitle';
+import ColourTitleBg from './ColourTitleBg';
+import EmailForm from './EmailForm';
+
+const tagsArray = [
+  'Football',
+  'Cricket',
+  'Covid 19',
+  'Life Style',
+  'Tranding News',
+  'Technology',
+  'Travel',
+];
 
 export default function Footer() {
   return (
@@ -23,11 +35,9 @@ export default function Footer() {
           </SofiaFontText>
           <SocialMediaBlock isFooterIcon />
         </div>
-        <div>
+        <div className="pt-[6]">
           <div className="flex justify-between mb-[20] relative border-b border-white pb-[14]  after:w-[70] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
-            <SectionTitle fontWeight={500} fontSize={'small'}>
-              Photo gallery
-            </SectionTitle>
+            <SectionTitle>Photo gallery</SectionTitle>
           </div>
           <ul className="grid grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr] gap-[7]">
             <li>
@@ -80,8 +90,28 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div></div>
-        <div></div>
+        <div className="py-[6]">
+          <div className="flex justify-between mb-[24] relative border-b border-white pb-[14]  after:w-[70] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+            <SectionTitle>Tags</SectionTitle>
+          </div>
+          <ul className="flex flex-wrap gap-[10]">
+            {tagsArray.map((item) => (
+              <li key={item}>
+                <ColourTitleBg isNeedSofiaFont>{item}</ColourTitleBg>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="pt-[6]">
+          <div className="flex justify-between mb-[24] relative border-b border-white pb-[14]  after:w-[70] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+            <SectionTitle>Stay In Touch</SectionTitle>
+          </div>
+          <SofiaFontText className="text-white text-sm mb-[16]">
+            To be updated with all the latest news, offers and special
+            annoucements.
+          </SofiaFontText>
+          <EmailForm isFooterForm />
+        </div>
       </div>
     </footer>
   );

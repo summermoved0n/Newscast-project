@@ -14,7 +14,7 @@ export default function PurchaseNow() {
         <p className="text-red-500">Experience the change!</p>
       </div>
 
-      <Button>PURCHASE NOW</Button>
+      <Button isHeroAdBtn>PURCHASE NOW</Button>
     </div>
   );
 }
