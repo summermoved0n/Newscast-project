@@ -9,6 +9,7 @@ import SmallAdItem from '@/app/components/SmallAdItem';
 import PrevPageBtn from './PrevPageBtn';
 import NextPageBtn from './NextPageBtn';
 import SectionTopWraper from './SectionTopWraper';
+import Pagination from './Pagination';
 
 const titleArray = ['All', 'Travel', 'Recipes', 'Health & Fitness', 'Music'];
 
@@ -45,7 +46,7 @@ export default function LifeStyle({ news }) {
           </div>
         </div>
       </SectionTopWraper>
-      <div className="grid grid-cols-[1fr_1fr] gap-[30]">
+      <Pagination id={page} className="grid grid-cols-[1fr_1fr] gap-[30]">
         <div className="flex flex-col gap-[26px]">
           <BigAdItem
             article_id={firstBigItem.article_id}
@@ -97,7 +98,7 @@ export default function LifeStyle({ news }) {
             ))}
           </ul>
         </div>
-      </div>
+      </Pagination>
     </section>
   );
 }

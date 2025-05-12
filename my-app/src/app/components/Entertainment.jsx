@@ -10,11 +10,10 @@ import NextPageBtn from './NextPageBtn';
 import Pagination from './Pagination';
 import SectionTopWraper from './SectionTopWraper';
 
-const pageCount = 2;
-
 export default function Entertainment({ news }) {
   const [page, setPage] = useState(0);
 
+  const pageCount = 2;
   const startIndex = page * 4;
   const mainItem = news[startIndex];
   const smallItems = news.slice(startIndex + 1, startIndex + 4);

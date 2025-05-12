@@ -31,6 +31,8 @@ export default async function Page() {
   const lifeStyle = await getLifeStyleNews();
   const pixabayVideo = await getPixabayVideo();
 
+  console.log(pixabayVideo);
+
   return (
     <div className="font-normal">
       <Header weather={weather} news={news} />

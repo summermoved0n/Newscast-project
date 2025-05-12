@@ -9,6 +9,7 @@ import SmallAdItem from '@/app/components/SmallAdItem';
 import SectionTopWraper from './SectionTopWraper';
 import PrevPageBtn from './PrevPageBtn';
 import NextPageBtn from './NextPageBtn';
+import Pagination from './Pagination';
 
 const titleArray = [
   'All',
@@ -47,7 +48,7 @@ export default function Sports({ news }) {
           </div>
         </div>
       </SectionTopWraper>
-      <div className="grid grid-cols-[1fr_1fr] gap-[30]">
+      <Pagination id={page} className="grid grid-cols-[1fr_1fr] gap-[30]">
         <BigAdItem
           article_id={bigItem.article_id}
           category={bigItem.category}
@@ -57,7 +58,7 @@ export default function Sports({ news }) {
           pubDate={bigItem.pubDate}
           description={bigItem.description}
         />
-        <ul className="flex flex-col justify-between">
+        <ul className="flex flex-col justify-start gap-[16]">
           {smallItems.map((item) => (
             <SmallAdItem
               key={item.article_id}
@@ -71,7 +72,7 @@ export default function Sports({ news }) {
             />
           ))}
         </ul>
-      </div>
+      </Pagination>
     </section>
   );
 }
