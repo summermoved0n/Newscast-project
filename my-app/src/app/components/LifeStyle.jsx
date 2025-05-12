@@ -1,85 +1,100 @@
+'use client';
+
+import { useState } from 'react';
+
 import ColourTitleBg from '@/app/components/ColourTitleBg';
 import SectionTitle from '@/app/components/SectionTitle';
 import BigAdItem from '@/app/components/BigAdItem';
 import SmallAdItem from '@/app/components/SmallAdItem';
+import PrevPageBtn from './PrevPageBtn';
+import NextPageBtn from './NextPageBtn';
+import SectionTopWraper from './SectionTopWraper';
+
+const titleArray = ['All', 'Travel', 'Recipes', 'Health & Fitness', 'Music'];
 
 export default function LifeStyle({ news }) {
+  const [page, setPage] = useState(0);
+
+  const pageCount = 2;
+
+  const firstIndex = page * 3;
+  const secondIndex = firstIndex + 3;
+
+  const firstBigItem = news[firstIndex];
+  const firstSmallItems = news.slice(firstIndex + 1, firstIndex + 3);
+
+  const secondBigItem = news[secondIndex];
+  const secondSmallItems = news.slice(secondIndex + 1, secondIndex + 3);
   return (
     <section>
-      <div className="flex justify-between mb-[40] relative border-b border-[#393939] pb-[14]  after:w-[140] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+      <SectionTopWraper>
         <SectionTitle isRedColour={true} fontWeight={500}>
           Life Style
         </SectionTitle>
-        <div className="flex gap-[12]">
-          <ColourTitleBg>All</ColourTitleBg>
-          <ColourTitleBg>Travel</ColourTitleBg>
-          <ColourTitleBg>Recipes</ColourTitleBg>
-          <ColourTitleBg>Health & Fitness</ColourTitleBg>
-          <ColourTitleBg>Music</ColourTitleBg>
+        <div className="flex items-center gap-[12]">
+          <ul className="flex gap-[12]">
+            {titleArray.map((item) => (
+              <li key={item}>
+                <ColourTitleBg>{item}</ColourTitleBg>
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-[10]">
+            <PrevPageBtn page={page} setPage={setPage} pageCount={pageCount} />
+            <NextPageBtn page={page} setPage={setPage} pageCount={pageCount} />
+          </div>
         </div>
-      </div>
+      </SectionTopWraper>
       <div className="grid grid-cols-[1fr_1fr] gap-[30]">
         <div className="flex flex-col gap-[26px]">
           <BigAdItem
-            article_id={news[0].article_id}
-            category={news[0].category}
-            image_url={news[0].image_url}
-            creator={news[0].creator}
-            title={news[0].title}
-            pubDate={news[0].pubDate}
-            description={news[0].description}
+            article_id={firstBigItem.article_id}
+            category={firstBigItem.category}
+            image_url={firstBigItem.image_url}
+            creator={firstBigItem.creator}
+            title={firstBigItem.title}
+            pubDate={firstBigItem.pubDate}
+            description={firstBigItem.description}
           />
 
           <ul className="flex flex-col gap-[22px]">
-            <SmallAdItem
-              article_id={news[1].article_id}
-              image={news[1].image_url}
-              creator={news[1].creator}
-              title={news[1].title}
-              pubDate={news[1].pubDate}
-              imageSize={'big'}
-            />
-
-            <SmallAdItem
-              article_id={news[2].article_id}
-              image={news[2].image_url}
-              creator={news[2].creator}
-              title={news[2].title}
-              pubDate={news[2].pubDate}
-              imageSize={'big'}
-            />
+            {firstSmallItems.map((item) => (
+              <SmallAdItem
+                key={item.article_id}
+                article_id={item.article_id}
+                image={item.image_url}
+                creator={item.creator}
+                title={item.title}
+                pubDate={item.pubDate}
+                imageSize={'big'}
+              />
+            ))}
           </ul>
         </div>
 
         <div className="flex flex-col gap-[26px]">
           <BigAdItem
-            article_id={news[0].article_id}
-            category={news[0].category}
-            image_url={news[0].image_url}
-            creator={news[0].creator}
-            title={news[0].title}
-            pubDate={news[0].pubDate}
-            description={news[0].description}
+            article_id={secondBigItem.article_id}
+            category={secondBigItem.category}
+            image_url={secondBigItem.image_url}
+            creator={secondBigItem.creator}
+            title={secondBigItem.title}
+            pubDate={secondBigItem.pubDate}
+            description={secondBigItem.description}
           />
 
           <ul className="flex flex-col gap-[22px]">
-            <SmallAdItem
-              article_id={news[1].article_id}
-              image={news[1].image_url}
-              creator={news[1].creator}
-              title={news[1].title}
-              pubDate={news[1].pubDate}
-              imageSize={'big'}
-            />
-
-            <SmallAdItem
-              article_id={news[2].article_id}
-              image={news[2].image_url}
-              creator={news[2].creator}
-              title={news[2].title}
-              pubDate={news[2].pubDate}
-              imageSize={'big'}
-            />
+            {secondSmallItems.map((item) => (
+              <SmallAdItem
+                key={item.article_id}
+                article_id={item.article_id}
+                image={item.image_url}
+                creator={item.creator}
+                title={item.title}
+                pubDate={item.pubDate}
+                imageSize={'big'}
+              />
+            ))}
           </ul>
         </div>
       </div>
