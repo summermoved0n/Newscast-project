@@ -45,11 +45,9 @@ export default function BigAdItem({
         </span>
       </p>
       <p className="text-[#393939] font-medium mb-[6]">{title}</p>
-      <span
-        className={`${font.className} block text-[rgba(57,57,57,0.6)] line-clamp-3`}
-      >
+      <p className={`${font.className} text-[rgba(57,57,57,0.6)] line-clamp-3`}>
         {description}
-      </span>
+      </p>
     </div>
   );
 }
