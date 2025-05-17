@@ -24,33 +24,31 @@ import FollowUs from '@/app/components/FollowUs';
 import Footer from '@/app/components/Footer';
 
 export default async function Page() {
-  const weather = await getWeatherByQuery();
-  const news = await getNews();
-  const entertainment = await getEntertainmentNews();
-  const sport = await getSportsNews();
-  const lifeStyle = await getLifeStyleNews();
-  const pixabayVideo = await getPixabayVideo();
-
-  console.log(pixabayVideo);
+  // const weather = await getWeatherByQuery();
+  // const news = await getNews();
+  // const entertainment = await getEntertainmentNews();
+  // const sport = await getSportsNews();
+  // const lifeStyle = await getLifeStyleNews();
+  // const pixabayVideo = await getPixabayVideo();
 
   return (
     <div className="font-normal">
-      <Header weather={weather} news={news} />
+      {/* <Header weather={weather} news={news} /> */}
       <main className="px-[20] mb-[150] ">
         <Hero />
         <Navigation />
-        <MainNews news={news} />
+        {/* <MainNews news={news} /> */}
         <div className="grid grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          <DontMiss news={entertainment} />
-          <RecentNews news={news} />
+          {/* <DontMiss news={entertainment} /> */}
+          {/* <RecentNews news={news} /> */}
         </div>
-        <Entertainment news={entertainment} />
+        {/* <Entertainment news={entertainment} /> */}
         <div className="grid grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
-            <Sports news={sport} />
-            <LifeStyle news={lifeStyle} />
+            {/* <Sports news={sport} /> */}
+            {/* <LifeStyle news={lifeStyle} /> */}
             <PurchaseNow />
-            <Video video={pixabayVideo} />
+            {/* <Video video={pixabayVideo} /> */}
           </div>
           <div className="flex flex-col gap-[24]">
             <StayConnected />
