@@ -3,25 +3,30 @@ import SectionTitle from '@/app/components/SectionTitle';
 import BigAdItem from '@/app/components/BigAdItem';
 import SmallAdItem from '@/app/components/SmallAdItem';
 
+const titleArray = [
+  'All',
+  'Lifestyle',
+  'Vogue',
+  'Health & Fitness',
+  'Travel',
+  'Gadgets',
+  'World',
+];
+
 export default function DontMiss({ news }) {
-  console.log(news);
   return (
     <section>
       <div className="flex justify-between mb-[24] relative border-b border-[#393939] pb-[14]  after:w-[140] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour={true} fontWeight={500}>
           Don't Miss
         </SectionTitle>
-        <div className="flex gap-[12]">
-          <ColourTitleBg isNeedSofiaFont={false}>All</ColourTitleBg>
-          <ColourTitleBg isNeedSofiaFont={false}>Lifestyle</ColourTitleBg>
-          <ColourTitleBg isNeedSofiaFont={false}>Vogue</ColourTitleBg>
-          <ColourTitleBg isNeedSofiaFont={false}>
-            Health & Fitness
-          </ColourTitleBg>
-          <ColourTitleBg isNeedSofiaFont={false}>Travel</ColourTitleBg>
-          <ColourTitleBg isNeedSofiaFont={false}>Gadgets</ColourTitleBg>
-          <ColourTitleBg isNeedSofiaFont={false}>World</ColourTitleBg>
-        </div>
+        <ul className="flex gap-[12]">
+          {titleArray.map((item) => (
+            <li key={item}>
+              <ColourTitleBg>{item}</ColourTitleBg>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="grid grid-cols-[1fr_1fr] gap-[30]">
         <BigAdItem

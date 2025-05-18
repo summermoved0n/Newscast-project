@@ -21,7 +21,7 @@ export default function SmallAdItem({
   creator,
   title,
   pubDate,
-  imageSize,
+  imageSize = 'medium',
   isNeedColorBgText,
   className = '',
   ...props
