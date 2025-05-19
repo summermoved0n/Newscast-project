@@ -7,11 +7,13 @@ import { capitalizeFirstLetter } from '../../lib/helpers';
 
 import SmallAdItem from '../components/SmallAdItem';
 import Hero from '../components/Hero';
-import Navigation from '../components/Navigation';
+import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import SectionTopWraper from '../components/SectionTopWraper';
 import SectionTitle from '../components/SectionTitle';
 import Loader from '../components/Loader';
+import Modal from '../components/Modal';
+import NewsModalContent from '../components/NewsModalContent';
 
 export default function SearchPage() {
   const router = useRouter();
@@ -20,6 +22,8 @@ export default function SearchPage() {
 
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   useEffect(() => {
     if (!query) return;
@@ -31,11 +35,21 @@ export default function SearchPage() {
       .finally(() => setLoading(false));
   }, [query]);
 
+  const openModalFunc = (id) => {
+    if (!id) return;
+
+    const element = results.find((item) => item.article_id === id);
+    setModalContent(element);
+    setOpenModal(true);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow px-[20] mb-[50]">
         <Hero />
-        <Navigation />
+        <BackButton type="button" onClick={() => router.back()}>
+          ⬅ Back
+        </BackButton>
         <SectionTopWraper>
           <SectionTitle isRedColour={true} fontWeight={500}>
             {capitalizeFirstLetter(query)}
@@ -55,6 +69,7 @@ export default function SearchPage() {
                     creator={creator}
                     title={title}
                     pubDate={pubDate}
+                    getId={openModalFunc}
                   />
                 )
               )
@@ -70,6 +85,21 @@ export default function SearchPage() {
         )}
       </div>
       <Footer />
+
+      {openModal && (
+        <Modal show={true} onClose={() => setOpenModal(false)}>
+          <NewsModalContent
+            id={modalContent.article_id}
+            category={modalContent.category}
+            country={modalContent.country}
+            creator={modalContent.creator}
+            description={modalContent.description}
+            image={modalContent.image_url}
+            time={modalContent.pubDate}
+            title={modalContent.title}
+          />
+        </Modal>
+      )}
     </div>
   );
 }

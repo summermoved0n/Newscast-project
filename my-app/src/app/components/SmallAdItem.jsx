@@ -23,11 +23,21 @@ export default function SmallAdItem({
   pubDate,
   imageSize = 'medium',
   isNeedColorBgText,
+  getId,
   className = '',
   ...props
 }) {
+  const getIdByClick = (e) => {
+    getId(e.currentTarget.id);
+  };
+
   return (
-    <li key={article_id} id={article_id} className="relative flex gap-[20]">
+    <li
+      key={article_id}
+      id={article_id}
+      onClick={getIdByClick}
+      className="relative flex gap-[20] cursor-pointer"
+    >
       <div
         className={clsx(
           imageSize === 'small' && typeImageSize.small,

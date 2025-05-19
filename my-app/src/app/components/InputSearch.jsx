@@ -5,9 +5,12 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 const font = Sofia_Sans({ subsets: ['latin'] });
 
+import Loader from './Loader';
+
 export default function InputSearch() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSearchInput = (e) => {
     setSearchQuery(e.target.value);
@@ -16,7 +19,7 @@ export default function InputSearch() {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
-    console.log(searchQuery);
+    setLoading(true);
     router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
   };
 
@@ -55,6 +58,12 @@ export default function InputSearch() {
           </defs>
         </svg>
       </button>
+
+      {loading && (
+        <div className="absolute flex items-center justify-center top-[50%] left-[50%] bg-gray-500 h-full w-full">
+          <Loader />
+        </div>
+      )}
     </form>
   );
 }
