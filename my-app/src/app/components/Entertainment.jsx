@@ -9,14 +9,27 @@ import PrevPageBtn from './PrevPageBtn';
 import NextPageBtn from './NextPageBtn';
 import Pagination from './Pagination';
 import SectionTopWraper from './SectionTopWraper';
+import Modal from './Modal';
+import NewsModalContent from './NewsModalContent';
 
 export default function Entertainment({ news }) {
   const [page, setPage] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const pageCount = 2;
   const startIndex = page * 4;
   const mainItem = news[startIndex];
   const smallItems = news.slice(startIndex + 1, startIndex + 4);
+
+  const openModalFunc = (id) => {
+    if (!id) return;
+
+    const element = news.find((item) => item.article_id === id);
+    setModalContent(element);
+    setOpenModal(true);
+  };
+
   return (
     <section className="mb-[150]">
       <SectionTopWraper>
@@ -39,6 +52,7 @@ export default function Entertainment({ news }) {
           creator={mainItem.creator}
           title={mainItem.title}
           pubDate={mainItem.pubDate}
+          getId={openModalFunc}
           poisitionBlock={'col-span-1 row-span-1 text-4xl'}
         />
 
@@ -52,12 +66,28 @@ export default function Entertainment({ news }) {
               creator={item.creator}
               title={item.title}
               pubDate={item.pubDate}
+              getId={openModalFunc}
               imageSize={'big'}
               isNeedColorBgText
             />
           ))}
         </ul>
       </Pagination>
+
+      {openModal && (
+        <Modal show={true} onClose={() => setOpenModal(false)}>
+          <NewsModalContent
+            id={modalContent.article_id}
+            category={modalContent.category}
+            country={modalContent.country}
+            creator={modalContent.creator}
+            description={modalContent.description}
+            image={modalContent.image_url}
+            time={modalContent.pubDate}
+            title={modalContent.title}
+          />
+        </Modal>
+      )}
     </section>
   );
 }

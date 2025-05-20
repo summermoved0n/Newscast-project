@@ -8,6 +8,7 @@ export default function NavigationItem({
   children,
   selectItem,
   className = '',
+  ...props
 }) {
   return (
     <li
@@ -21,6 +22,7 @@ export default function NavigationItem({
           current &&
             'after:w-[40%] after:absolute after:bottom-[10] after:border after:border-white'
         )}
+        {...props}
       >
         <span>{children}</span>
       </Link>

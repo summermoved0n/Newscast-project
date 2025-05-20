@@ -10,6 +10,8 @@ import SectionTopWraper from './SectionTopWraper';
 import PrevPageBtn from './PrevPageBtn';
 import NextPageBtn from './NextPageBtn';
 import Pagination from './Pagination';
+import Modal from '../components/Modal';
+import NewsModalContent from '../components/NewsModalContent';
 
 const titleArray = [
   'All',
@@ -23,11 +25,21 @@ const titleArray = [
 
 export default function Sports({ news }) {
   const [page, setPage] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const pageCount = 2;
   const startIndex = page * 6;
   const bigItem = news[startIndex];
   const smallItems = news.slice(startIndex + 1, startIndex + 6);
+
+  const openModalFunc = (id) => {
+    if (!id) return;
+
+    const element = news.find((item) => item.article_id === id);
+    setModalContent(element);
+    setOpenModal(true);
+  };
   return (
     <section>
       <SectionTopWraper>
@@ -56,6 +68,7 @@ export default function Sports({ news }) {
           creator={bigItem.creator}
           title={bigItem.title}
           pubDate={bigItem.pubDate}
+          getId={openModalFunc}
           description={bigItem.description}
         />
         <ul className="flex flex-col justify-start gap-[16]">
@@ -68,11 +81,27 @@ export default function Sports({ news }) {
               creator={item.creator}
               title={item.title}
               pubDate={item.pubDate}
+              getId={openModalFunc}
               imageSize={'medium'}
             />
           ))}
         </ul>
       </Pagination>
+
+      {openModal && (
+        <Modal show={true} onClose={() => setOpenModal(false)}>
+          <NewsModalContent
+            id={modalContent.article_id}
+            category={modalContent.category}
+            country={modalContent.country}
+            creator={modalContent.creator}
+            description={modalContent.description}
+            image={modalContent.image_url}
+            time={modalContent.pubDate}
+            title={modalContent.title}
+          />
+        </Modal>
+      )}
     </section>
   );
 }

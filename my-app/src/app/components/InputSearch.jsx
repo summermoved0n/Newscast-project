@@ -60,9 +60,7 @@ export default function InputSearch() {
       </button>
 
       {loading && (
-        <div className="absolute flex items-center justify-center top-[50%] left-[50%] bg-gray-500 h-full w-full">
-          <Loader />
-        </div>
+        <Loader className="fixed inset-0 z-50 bg-gray-500/25 flex items-center justify-center" />
       )}
     </form>
   );

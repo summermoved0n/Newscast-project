@@ -9,13 +9,16 @@ export default function MainNewsItem({
   creator,
   title,
   pubDate,
+  getId,
   poisitionBlock,
 }) {
   return (
     <div
+      id={article_id}
       key={article_id}
-      className={`${poisitionBlock} font-medium bg-cover bg-center relative p-[15] flex flex-col justify-between`}
+      className={`${poisitionBlock} font-medium bg-cover bg-center relative p-[15] flex flex-col justify-between cursor-pointer`}
       style={{ backgroundImage: `url(${image_url})` }}
+      onClick={(e) => getId(e.currentTarget.id)}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <span className="relative z-10">

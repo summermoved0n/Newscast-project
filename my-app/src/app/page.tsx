@@ -29,7 +29,7 @@ export default async function Page() {
   // const entertainment = await getEntertainmentNews();
   // const sport = await getSportsNews();
   // const lifeStyle = await getLifeStyleNews();
-  // const pixabayVideo = await getPixabayVideo();
+  const pixabayVideo = await getPixabayVideo();
 
   return (
     <div className="font-normal">
@@ -48,7 +48,7 @@ export default async function Page() {
             {/* <Sports news={sport} /> */}
             {/* <LifeStyle news={lifeStyle} /> */}
             <PurchaseNow />
-            {/* <Video video={pixabayVideo} /> */}
+            <Video video={pixabayVideo} />
           </div>
           <div className="flex flex-col gap-[24]">
             <StayConnected />

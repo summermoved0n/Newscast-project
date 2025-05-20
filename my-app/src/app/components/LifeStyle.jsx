@@ -10,11 +10,15 @@ import PrevPageBtn from './PrevPageBtn';
 import NextPageBtn from './NextPageBtn';
 import SectionTopWraper from './SectionTopWraper';
 import Pagination from './Pagination';
+import Modal from '../components/Modal';
+import NewsModalContent from '../components/NewsModalContent';
 
 const titleArray = ['All', 'Travel', 'Recipes', 'Health & Fitness', 'Music'];
 
 export default function LifeStyle({ news }) {
   const [page, setPage] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const pageCount = 2;
 
@@ -26,6 +30,14 @@ export default function LifeStyle({ news }) {
 
   const secondBigItem = news[secondIndex];
   const secondSmallItems = news.slice(secondIndex + 1, secondIndex + 3);
+
+  const openModalFunc = (id) => {
+    if (!id) return;
+
+    const element = news.find((item) => item.article_id === id);
+    setModalContent(element);
+    setOpenModal(true);
+  };
   return (
     <section>
       <SectionTopWraper>
@@ -56,6 +68,7 @@ export default function LifeStyle({ news }) {
             title={firstBigItem.title}
             pubDate={firstBigItem.pubDate}
             description={firstBigItem.description}
+            getId={openModalFunc}
           />
 
           <ul className="flex flex-col gap-[22px]">
@@ -67,6 +80,7 @@ export default function LifeStyle({ news }) {
                 creator={item.creator}
                 title={item.title}
                 pubDate={item.pubDate}
+                getId={openModalFunc}
                 imageSize={'big'}
               />
             ))}
@@ -82,6 +96,7 @@ export default function LifeStyle({ news }) {
             title={secondBigItem.title}
             pubDate={secondBigItem.pubDate}
             description={secondBigItem.description}
+            getId={openModalFunc}
           />
 
           <ul className="flex flex-col gap-[22px]">
@@ -93,12 +108,28 @@ export default function LifeStyle({ news }) {
                 creator={item.creator}
                 title={item.title}
                 pubDate={item.pubDate}
+                getId={openModalFunc}
                 imageSize={'big'}
               />
             ))}
           </ul>
         </div>
       </Pagination>
+
+      {openModal && (
+        <Modal show={true} onClose={() => setOpenModal(false)}>
+          <NewsModalContent
+            id={modalContent.article_id}
+            category={modalContent.category}
+            country={modalContent.country}
+            creator={modalContent.creator}
+            description={modalContent.description}
+            image={modalContent.image_url}
+            time={modalContent.pubDate}
+            title={modalContent.title}
+          />
+        </Modal>
+      )}
     </section>
   );
 }

@@ -1,7 +1,12 @@
+'use client';
+
 import ColourTitleBg from '@/app/components/ColourTitleBg';
 import SectionTitle from '@/app/components/SectionTitle';
 import BigAdItem from '@/app/components/BigAdItem';
 import SmallAdItem from '@/app/components/SmallAdItem';
+import Modal from '../components/Modal';
+import NewsModalContent from '../components/NewsModalContent';
+import { useState } from 'react';
 
 const titleArray = [
   'All',
@@ -14,6 +19,17 @@ const titleArray = [
 ];
 
 export default function DontMiss({ news }) {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
+  const openModalFunc = (id) => {
+    if (!id) return;
+
+    const element = news.find((item) => item.article_id === id);
+    setModalContent(element);
+    setOpenModal(true);
+  };
+
   return (
     <section>
       <div className="flex justify-between mb-[24] relative border-b border-[#393939] pb-[14]  after:w-[140] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
@@ -37,6 +53,7 @@ export default function DontMiss({ news }) {
           title={news[0].title}
           pubDate={news[0].pubDate}
           description={news[0].description}
+          getId={openModalFunc}
         />
         <ul className="flex flex-col justify-between">
           <SmallAdItem
@@ -45,6 +62,7 @@ export default function DontMiss({ news }) {
             creator={news[1].creator}
             title={news[1].title}
             pubDate={news[1].pubDate}
+            getId={openModalFunc}
             imageSize={'medium'}
           />
 
@@ -54,6 +72,7 @@ export default function DontMiss({ news }) {
             creator={news[2].creator}
             title={news[2].title}
             pubDate={news[2].pubDate}
+            getId={openModalFunc}
             imageSize={'medium'}
           />
 
@@ -63,6 +82,7 @@ export default function DontMiss({ news }) {
             creator={news[3].creator}
             title={news[3].title}
             pubDate={news[3].pubDate}
+            getId={openModalFunc}
             imageSize={'medium'}
           />
 
@@ -72,6 +92,7 @@ export default function DontMiss({ news }) {
             creator={news[4].creator}
             title={news[4].title}
             pubDate={news[4].pubDate}
+            getId={openModalFunc}
             imageSize={'medium'}
           />
 
@@ -81,10 +102,26 @@ export default function DontMiss({ news }) {
             creator={news[5].creator}
             title={news[5].title}
             pubDate={news[5].pubDate}
+            getId={openModalFunc}
             imageSize={'medium'}
           />
         </ul>
       </div>
+
+      {openModal && (
+        <Modal show={true} onClose={() => setOpenModal(false)}>
+          <NewsModalContent
+            id={modalContent.article_id}
+            category={modalContent.category}
+            country={modalContent.country}
+            creator={modalContent.creator}
+            description={modalContent.description}
+            image={modalContent.image_url}
+            time={modalContent.pubDate}
+            title={modalContent.title}
+          />
+        </Modal>
+      )}
     </section>
   );
 }

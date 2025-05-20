@@ -16,11 +16,16 @@ export default function BigAdItem({
   title,
   pubDate,
   description,
+  getId,
   className = '',
   ...props
 }) {
   return (
-    <div id={article_id} className="relative">
+    <div
+      id={article_id}
+      className="relative cursor-pointer"
+      onClick={(e) => getId(e.currentTarget.id)}
+    >
       <span className="absolute top-[25] left-[25] z-10">
         <ColourTitleBg isNeedSofiaFont>
           {capitalizeFirstLetter(category)}
