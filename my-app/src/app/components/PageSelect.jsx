@@ -61,6 +61,7 @@ export default function PageSelect({ className = '' }) {
               current={pathname === value}
               pathname={value}
               selectItem
+              smallScreen
             >
               {name}
             </NavigationItem>

@@ -7,12 +7,18 @@ export default function NavigationItem({
   pathname,
   children,
   selectItem,
+  smallScreen,
   className = '',
   ...props
 }) {
   return (
     <li
-      className={clsx(className, 'text-xl', current && 'bg-red-500 text-white')}
+      className={clsx(
+        className,
+        'text-xl',
+        current && !smallScreen && 'bg-red-500 text-white',
+        current && smallScreen && ' text-red-500'
+      )}
     >
       <Link
         href={pathname}
@@ -20,7 +26,11 @@ export default function NavigationItem({
           selectItem ? 'py-[10] px-[10]' : 'py-[15] px-[17]',
           'flex items-center justify-center relative',
           current &&
-            'after:w-[40%] after:absolute after:bottom-[10] after:border after:border-white'
+            !smallScreen &&
+            'after:w-[40%] after:absolute after:bottom-[10] after:border after:border-white',
+          current &&
+            smallScreen &&
+            'after:w-[40%] after:absolute after:bottom-[5] after:border after:border-red-500'
         )}
         {...props}
       >

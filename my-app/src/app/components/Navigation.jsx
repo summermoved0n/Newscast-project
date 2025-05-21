@@ -7,6 +7,17 @@ import InputSearch from '@/app/components/InputSearch';
 import PageSelect from './PageSelect';
 import Loader from './Loader';
 
+const navArray = [
+  { name: 'Home', page: '/' },
+  { name: 'International', page: '/international' },
+  { name: 'Sports', page: '/sports' },
+  { name: 'Opinion', page: '/opinion' },
+  { name: 'Business', page: '/business' },
+  { name: 'Youth', page: '/youth' },
+  { name: 'Entertainment', page: '/entertainment' },
+  { name: 'Lifestyle', page: '/lifestyle' },
+];
+
 export default function Navigation() {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
@@ -14,69 +25,20 @@ export default function Navigation() {
   return (
     <aside className="flex justify-between mb-[25] flex bg-[#393939]">
       <ul className="text-white flex">
-        <NavigationItem
-          current={pathname === '/'}
-          pathname="/"
-          onClick={() => setLoading(true)}
-        >
-          Home
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/international'}
-          pathname="/international"
-          onClick={() => setLoading(true)}
-        >
-          International
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/sports'}
-          pathname="/sports"
-          onClick={() => setLoading(true)}
-        >
-          Sports
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/opinion'}
-          pathname="/opinion"
-          onClick={() => setLoading(true)}
-        >
-          Opinion
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/business'}
-          pathname="/business"
-          onClick={() => setLoading(true)}
-        >
-          Business
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/youth'}
-          pathname="/youth"
-          onClick={() => setLoading(true)}
-        >
-          Youth
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/entertainment'}
-          pathname="/entertainment"
-          onClick={() => setLoading(true)}
-        >
-          Entertainment
-        </NavigationItem>
-        <NavigationItem
-          className="hidden lg:block"
-          current={pathname === '/lifestyle'}
-          pathname="/lifestyle"
-          onClick={() => setLoading(true)}
-        >
-          Lifestyle
-        </NavigationItem>
+        {navArray.map(({ name, page }) => (
+          <NavigationItem
+            key={name}
+            className={`${page !== '/' && 'hidden lg:block'}`}
+            current={pathname === page}
+            pathname={page}
+            onClick={() => {
+              if (pathname === page) return;
+              setLoading(true);
+            }}
+          >
+            {name}
+          </NavigationItem>
+        ))}
         <PageSelect className="lg:hidden" />
       </ul>
       <InputSearch />
