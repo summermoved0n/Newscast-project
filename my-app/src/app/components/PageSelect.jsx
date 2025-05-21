@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import NavigationItem from './NavigationItem';
+import Loader from './Loader';
 
 const listOfOptions = [
   { name: 'International', value: '/international' },
@@ -20,6 +21,7 @@ export default function PageSelect({ className = '' }) {
   const dropdownRef = useRef(null);
 
   const [isOpenSelect, setIsOpenSelect] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -60,6 +62,10 @@ export default function PageSelect({ className = '' }) {
               className="hover:text-red-500"
               current={pathname === value}
               pathname={value}
+              onClick={() => {
+                if (pathname === value) return;
+                setLoading(true);
+              }}
               selectItem
               smallScreen
             >
@@ -67,6 +73,10 @@ export default function PageSelect({ className = '' }) {
             </NavigationItem>
           ))}
         </ul>
+      )}
+
+      {loading && (
+        <Loader className="fixed inset-0 z-50 bg-gray-500/25 flex items-center justify-center" />
       )}
     </li>
   );
