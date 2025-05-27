@@ -50,7 +50,7 @@ export default function Video({ video }) {
           type={bigItem.type}
           tags={bigItem.tags}
         />
-        <ul className="flex justify-between gap-[24]">
+        <ul className="grid grid-cols-[1fr_1fr_1fr] justify-between gap-[24]">
           {smallItems.map((item) => (
             <li key={item.id}>
               <VideoItem

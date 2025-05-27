@@ -17,7 +17,7 @@ export default function Header({ weather, news }) {
     <header
       className={`${font.className} bg-white flex h-[42] items-center justify-between shadow-[0_1px_10px_0_rgba(246,80,80,0.15)] text-xs mb-[26] px-[20]`}
     >
-      <div className="flex items-center h-[100%]">
+      <div className="flex items-center justify-between h-full w-full sm:w-auto">
         <Image
           className="mr-[7]"
           width={16}
@@ -44,12 +44,14 @@ export default function Header({ weather, news }) {
           alt="clock icon"
         />
         <p className="mr-[14]">{dataToday}</p>
-        <p className="flex items-center px-[7] text-white bg-red-500 h-[100%] mr-[17]">
+        <p className="flex items-center px-[7] text-white bg-red-500 h-full sm:mr-[17]">
           Breaking News
         </p>
-        <p>{news[0].title}</p>
+        <p className="hidden sm:block">{news[0].title}</p>
       </div>
-      <SocialMediaBlock />
+      <div className="hidden lg:block">
+        <SocialMediaBlock />
+      </div>
     </header>
   );
 }

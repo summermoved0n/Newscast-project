@@ -17,7 +17,7 @@ export default function MainNews({ news }) {
   };
 
   return (
-    <section className="grid grid-cols-[2fr_1fr_1fr] grid-rows-2 gap-[15] mb-[58]">
+    <section className="grid grid-cols-1 grid-rows-[2fr_1fr_1fr_1fr] sm:grid-cols-[2fr_1fr_1fr] sm:grid-rows-2 gap-[15] mb-[58]">
       <MainNewsItem
         article_id={news[0].article_id}
         category={news[0].category}
@@ -26,7 +26,7 @@ export default function MainNews({ news }) {
         title={news[0].title}
         pubDate={news[0].pubDate}
         getId={openModalFunc}
-        poisitionBlock={'col-span-1 row-span-2 text-4xl'}
+        poisitionBlock={'sm:col-span-1 sm:row-span-2 text-xl lg:text-4xl'}
       />
 
       <MainNewsItem
@@ -37,7 +37,7 @@ export default function MainNews({ news }) {
         title={news[1].title}
         pubDate={news[1].pubDate}
         getId={openModalFunc}
-        poisitionBlock={'col-span-1'}
+        poisitionBlock={'sm:col-span-1'}
       />
 
       <MainNewsItem
@@ -48,7 +48,7 @@ export default function MainNews({ news }) {
         title={news[2].title}
         pubDate={news[2].pubDate}
         getId={openModalFunc}
-        poisitionBlock={'col-span-1'}
+        poisitionBlock={'sm:col-span-1'}
       />
 
       <MainNewsItem
@@ -59,7 +59,7 @@ export default function MainNews({ news }) {
         title={news[3].title}
         pubDate={news[3].pubDate}
         getId={openModalFunc}
-        poisitionBlock={'col-span-2'}
+        poisitionBlock={'sm:col-span-2'}
       />
 
       {openModal && (

@@ -8,12 +8,13 @@ import PurchaseNow from '@/app/components/PurchaseNow';
 export default function Hero() {
   return (
     <section
-      className="grid grid-cols-[1fr_2fr] gap-[153] items-center mb-[26]
+      className="flex flex-col justify-between items-start mb-[26] gap-[20] sm:flex-row sm:items-center md:gap-[150]
 "
     >
       <Link href={'/'}>
         <Image
-          width={247}
+          className="md:w-[247]"
+          width={180}
           height={64}
           src="/images/Logo-min.png"
           alt="logo icon"

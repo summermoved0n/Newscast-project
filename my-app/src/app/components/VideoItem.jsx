@@ -53,34 +53,36 @@ export default function CustomPlayer({
           {capitalizeFirstLetter(type)}
         </ColourTitleBg>
       </span>
-      <video
-        ref={videoRef}
-        src={src}
-        className={`w-full h-full object-cover`}
-      />
-      {!playing && (
-        <button
-          onClick={togglePlay}
-          className={`${
-            !small ? 'h-[70px] w-[70px]' : 'h-[38px] w-[38px]'
-          } absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent  rounded-full border-[2px] border-white`}
-        >
-          <svg
-            width={small ? '16' : '20'}
-            height={small ? '16' : '24'}
-            viewBox="0 0 20 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className="relative h-full w-full">
+        <video
+          ref={videoRef}
+          src={src}
+          className={`w-full h-full object-cover`}
+        />
+        {!playing && (
+          <button
+            onClick={togglePlay}
+            className={`${
+              !small ? 'h-[70px] w-[70px]' : 'h-[38px] w-[38px]'
+            } absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent  rounded-full border-[2px] border-white`}
           >
-            <path
-              d="M20 12L0.499999 23.2583L0.5 0.741669L20 12Z"
-              fill="white"
-            />
-          </svg>
-        </button>
-      )}
+            <svg
+              width={small ? '16' : '20'}
+              height={small ? '16' : '24'}
+              viewBox="0 0 20 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 12L0.499999 23.2583L0.5 0.741669L20 12Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        )}
+      </div>
       {small ? (
-        <div className={`mt-[25]`}>
+        <div onClick={(e) => e.stopPropagation()} className={`mt-[25]`}>
           <p className={`${font.className} text-[#393939] text-xs mb-[6]`}>
             {creator} -{' '}
             <span className={`text-[rgba(57,57,57,0.6)]`}>{views} views</span>

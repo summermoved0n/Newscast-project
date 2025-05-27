@@ -31,7 +31,7 @@ export default function SocialMediaBlock({ isFooterIcon }) {
         <a
           className={`${
             isFooterIcon ? 'w-[40] h-[40]' : 'w-[24] h-[24]'
-          } flex justify-center items-center rounded-[50%] transition-all duration-300 ease-liner bg-[#42C0F5] hover:bg-purple-400`}
+          } flex justify-center items-center rounded-[50%] transition-all duration-300 ease-liner bg-[#42C0F5] hover:bg-blue-500`}
           href="https://twitter.com"
           target="_blank"
           rel="noopener noreferrer"

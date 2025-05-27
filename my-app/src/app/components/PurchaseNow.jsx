@@ -11,7 +11,7 @@ const font = Sofia_Sans({ subsets: ['latin'] });
 export default function PurchaseNow() {
   const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="bg-[url('/images/add-bg-pic.jpg')] bg-cover bg-center flex justify-between items-center px-[26] py-[16]">
+    <div className="bg-[url('/images/add-bg-pic.jpg')] bg-cover bg-center flex justify-between items-center px-[26] py-[16] w-full max-w-[770]">
       <div className="text-sm">
         <p className={`${font.className} text-white`}>
           Best Selling <b>BLOG</b> and <b>MAGAZINE</b>

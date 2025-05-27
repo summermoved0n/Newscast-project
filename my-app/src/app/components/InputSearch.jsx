@@ -26,7 +26,7 @@ export default function InputSearch() {
   return (
     <form className="flex relative group" onSubmit={handleSubmitForm}>
       <input
-        className={`${font.className} w-[150] bg-[#393939] border-solid border-l border-[rgba(255,255,255,0.3)] font-light text-white placeholder:text-[rgba(255,255,255,0.3)] placeholder:text-xs pl-[16] pr-[40] outline-none focus:placeholder:text-white`}
+        className={`${font.className} w-[120] bg-[#393939] border-solid border-l border-[rgba(255,255,255,0.3)] font-light text-white placeholder:text-[rgba(255,255,255,0.3)] placeholder:text-xs pl-[16] pr-[40] outline-none focus:placeholder:text-white sm:w-[150]`}
         type="text"
         placeholder="Search for"
         name="search"

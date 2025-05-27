@@ -19,7 +19,10 @@ export default function NewsModalContent({
   title,
 }) {
   return (
-    <div id={id} className="grid grid-cols-[1fr_350px] gap-[30] pt-[30]">
+    <div
+      id={id}
+      className="grid grid-cols-1 sm:grid-cols-[1fr_350px] gap-[30] pt-[50]"
+    >
       <div className="relative">
         <span className="absolute top-[6] left-[6] z-10">
           <ColourTitleBg isNeedSofiaFont={true}>
@@ -50,7 +53,7 @@ export default function NewsModalContent({
         <p className="text-[#393939] text-2xl pb-[4] mb-[10] border-b-4 border-[#393939]">
           Description:
         </p>
-        <p className="text-[rgba(57,57,57,0.6)] text-xl overflow-y-auto overflow-x-hidden max-h-[500px] pr-4">
+        <p className="text-[rgba(57,57,57,0.6)] text-xl overflow-y-auto overflow-x-hidden max-h-[500px] pr-4 w-[350]">
           {description ? description : 'No description ☹'}
         </p>
       </div>

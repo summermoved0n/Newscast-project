@@ -8,7 +8,7 @@ export default function Modal({ show, children, onClose }) {
     <Transition.Root as={Fragment} show={show}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-50 flex items-center"
+        className="fixed inset-0 z-50 flex items-center overflow-y-auto"
         onClose={onClose}
       >
         <Transition.Child
@@ -22,9 +22,9 @@ export default function Modal({ show, children, onClose }) {
         >
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
-        <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all p-7 mx-auto sm:my-10 sm:w-full sm:max-w-2xl">
+        <Dialog.Panel className="relative transform overflow-hidden sm:rounded-lg bg-white shadow-xl transition-all p-7 my-auto mx-auto sm:my-10 sm:w-full sm:max-w-xl">
           <button
-            className="absolute w-[20] h-[20] top-5 right-5 text-black font-semibold"
+            className="absolute w-[30] h-[30] sm:w-[20] sm:h-[20] top-[20] right-[20] sm:top-[15] sm:right-[15] text-black font-semibold"
             onClick={onClose}
           >
             ✕
