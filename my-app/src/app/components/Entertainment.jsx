@@ -33,7 +33,7 @@ export default function Entertainment({ news }) {
   return (
     <section className="mb-[150]">
       <SectionTopWraper>
-        <SectionTitle isRedColour={true} fontWeight={500}>
+        <SectionTitle isRedColour fontWeight={500}>
           Entertainment
         </SectionTitle>
         <div className="flex gap-[10]">
@@ -43,7 +43,7 @@ export default function Entertainment({ news }) {
       </SectionTopWraper>
       <Pagination
         id={page}
-        className="grid grid-cols-[1fr] grid-rows-[4fr_1fr] gap-[24] absolute top-0 left-0 w-full mb-[50]"
+        className="grid grid-cols-1 lg:grid-cols-[1fr] grid-rows-[1fr_1fr_1fr_1fr] lg:grid-rows-[2fr_1fr] xl:grid-rows-[4fr_1fr] gap-[44] lg:gap-[24] absolute top-0 left-0 w-full mb-[50]"
       >
         <MainNewsItem
           article_id={mainItem.article_id}
@@ -53,10 +53,10 @@ export default function Entertainment({ news }) {
           title={mainItem.title}
           pubDate={mainItem.pubDate}
           getId={openModalFunc}
-          poisitionBlock={'col-span-1 row-span-1 text-4xl'}
+          poisitionBlock={'sm:col-span-1 sm:row-span-1 text-2xl lg:text-4xl'}
         />
 
-        <ul className="flex justify-between">
+        <ul className="flex flex-wrap justify-between gap-[16]">
           {smallItems.map((item) => (
             <SmallAdItem
               key={item.article_id}

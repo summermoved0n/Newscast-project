@@ -26,7 +26,7 @@ import Footer from '@/app/components/Footer';
 export default async function Page() {
   const weather = await getWeatherByQuery();
   const news = await getNews();
-  // const entertainment = await getEntertainmentNews();
+  const entertainment = await getEntertainmentNews();
   // const sport = await getSportsNews();
   // const lifeStyle = await getLifeStyleNews();
   const pixabayVideo = await getPixabayVideo();
@@ -38,11 +38,11 @@ export default async function Page() {
         <Hero />
         <Navigation />
         <MainNews news={news} />
-        <div className="grid grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          {/* <DontMiss news={entertainment} /> */}
-          {/* <RecentNews news={news} /> */}
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
+          <DontMiss news={entertainment} />
+          <RecentNews news={news} />
         </div>
-        {/* <Entertainment news={entertainment} /> */}
+        <Entertainment news={entertainment} />
         <div className="grid grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
             {/* <Sports news={sport} /> */}

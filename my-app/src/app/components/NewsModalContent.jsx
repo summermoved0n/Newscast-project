@@ -21,7 +21,7 @@ export default function NewsModalContent({
   return (
     <div
       id={id}
-      className="grid grid-cols-1 sm:grid-cols-[1fr_350px] gap-[30] pt-[50]"
+      className="grid grid-cols-1 sm:grid-cols-[1fr_1fr] gap-[30] pt-[50]"
     >
       <div className="relative">
         <span className="absolute top-[6] left-[6] z-10">

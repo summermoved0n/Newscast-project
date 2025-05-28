@@ -36,7 +36,7 @@ export default function DontMiss({ news }) {
         <SectionTitle isRedColour={true} fontWeight={500}>
           Don't Miss
         </SectionTitle>
-        <ul className="flex gap-[12]">
+        <ul className="hidden md:flex gap-[12]">
           {titleArray.map((item) => (
             <li key={item}>
               <ColourTitleBg>{item}</ColourTitleBg>
@@ -44,7 +44,7 @@ export default function DontMiss({ news }) {
           ))}
         </ul>
       </div>
-      <div className="grid grid-cols-[1fr_1fr] gap-[30]">
+      <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr] gap-[30]">
         <BigAdItem
           article_id={news[0].article_id}
           category={news[0].category}
@@ -55,7 +55,7 @@ export default function DontMiss({ news }) {
           description={news[0].description}
           getId={openModalFunc}
         />
-        <ul className="flex flex-col justify-between">
+        <ul className="flex flex-col justify-between gap-[15] sm:gap-[5]">
           <SmallAdItem
             article_id={news[1].article_id}
             image={news[1].image_url}
