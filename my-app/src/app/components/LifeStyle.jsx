@@ -45,7 +45,7 @@ export default function LifeStyle({ news }) {
           Life Style
         </SectionTitle>
         <div className="flex items-center gap-[12]">
-          <ul className="flex gap-[12]">
+          <ul className="hidden md:flex gap-[12]">
             {titleArray.map((item) => (
               <li key={item}>
                 <ColourTitleBg>{item}</ColourTitleBg>
@@ -58,7 +58,10 @@ export default function LifeStyle({ news }) {
           </div>
         </div>
       </SectionTopWraper>
-      <Pagination id={page} className="grid grid-cols-[1fr_1fr] gap-[30]">
+      <Pagination
+        id={page}
+        className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-[30]"
+      >
         <div className="flex flex-col gap-[26px]">
           <BigAdItem
             article_id={firstBigItem.article_id}

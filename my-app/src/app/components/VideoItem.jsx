@@ -92,11 +92,13 @@ export default function CustomPlayer({
           </p>
         </div>
       ) : (
-        <div className={`bottom-[50] left-[25] absolute z-10 text-white`}>
+        <div
+          className={`flex items-start justify-between md:flex-col bottom-[15] md:bottom-[50] left-[15] md:left-[25] absolute z-10 text-white`}
+        >
           <p className={`${font.className} text-xs mb-[6]`}>
             {creator} - {views} views
           </p>
-          <p className="font-medium text-4xl line-clamp-2 w-[50%]">
+          <p className="font-medium md:text-4xl line-clamp-1 md:line-clamp-2 w-[50%]">
             {capitalizeFirstLetter(tags)}
           </p>
         </div>

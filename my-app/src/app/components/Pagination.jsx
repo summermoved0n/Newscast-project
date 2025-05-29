@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Pagination({ id, children, className = '' }) {
   return (
-    <div className="relative w-full min-h-[400px]">
+    <div className="relative w-full h-full">
       <AnimatePresence mode="wait">
         <motion.div
           key={id}

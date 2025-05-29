@@ -26,7 +26,7 @@ export default function Video({ video }) {
           Video
         </SectionTitle>
         <div className="flex gap-[12] items-center">
-          <ul className="flex gap-[12]">
+          <ul className="hidden md:flex gap-[12]">
             {titleArray.map((item) => (
               <li key={item}>
                 <ColourTitleBg>{item}</ColourTitleBg>
@@ -41,7 +41,7 @@ export default function Video({ video }) {
       </SectionTopWraper>
       <Pagination
         id={page}
-        className="grid grid-cols-[1fr] grid-rows-[2fr_1fr] gap-[24]"
+        className="grid grid-cols-[1fr] md:grid-rows-[2fr_1fr] gap-[24]"
       >
         <VideoItem
           src={bigItem.videos.medium.url}
@@ -50,7 +50,7 @@ export default function Video({ video }) {
           type={bigItem.type}
           tags={bigItem.tags}
         />
-        <ul className="grid grid-cols-[1fr_1fr_1fr] justify-between gap-[24]">
+        <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr] justify-between gap-[24]">
           {smallItems.map((item) => (
             <li key={item.id}>
               <VideoItem

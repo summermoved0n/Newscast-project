@@ -14,68 +14,116 @@ const getCountryWeatherInfoURL =
   'https://api.openweathermap.org/data/2.5/weather?';
 
 export async function getWeatherByQuery() {
-  const { data } = await axios.get(weatherLocationURL);
+  try {
+    const { data } = await axios.get(weatherLocationURL);
 
-  const countryLon = data[0].lon;
-  const countryLat = data[0].lat;
+    if (!data) throw new Error('Oups 🤷‍♂️');
 
-  const weather = await axios.get(
-    `${getCountryWeatherInfoURL}lat=${countryLat}&lon=${countryLon}&appid=${WEATHER_API_KEY}`
-  );
+    const countryLon = data[0].lon;
+    const countryLat = data[0].lat;
 
-  return weather.data;
+    const weather = await axios.get(
+      `${getCountryWeatherInfoURL}lat=${countryLat}&lon=${countryLon}&appid=${WEATHER_API_KEY}`
+    );
+
+    if (!weather) throw new Error('Oups 🤷‍♂️');
+
+    return weather.data;
+  } catch (error) {}
 }
 
 export async function getNews() {
-  const { data } = await axios.get(
-    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=top&language=en`
-  );
+  try {
+    const { data } = await axios.get(
+      `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=top&language=en`
+    );
 
-  return data.results;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getNewsByQuery(value) {
-  const { data } = await axios.get(
-    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=${value}&language=en`
-  );
+  try {
+    const { data } = await axios.get(
+      `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=${value}&language=en`
+    );
 
-  return data.results;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getImportantNews() {
-  const { data } = await axios.get(
-    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=important&language=en`
-  );
+  try {
+    const { data } = await axios.get(
+      `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=important&language=en`
+    );
 
-  return data.results;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getEntertainmentNews() {
-  const { data } = await axios.get(
-    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=entertainment&language=en`
-  );
+  try {
+    const { data } = await axios.get(
+      `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=entertainment&language=en`
+    );
 
-  return data.results;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getSportsNews() {
-  const { data } = await axios.get(
-    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=sport&language=en`
-  );
+  try {
+    const { data } = await axios.get(
+      `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=sport&language=en`
+    );
 
-  return data.results;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getLifeStyleNews() {
-  const { data } = await axios.get(
-    `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=life+style&language=en`
-  );
+  try {
+    const { data } = await axios.get(
+      `${newsBaseURL}latest?apikey=${NEWS_API_KEY}&q=life+style&language=en`
+    );
 
-  return data.results;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.results;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getPixabayVideo() {
-  const { data } = await axios.get(pixabayBaseURL);
+  try {
+    const { data } = await axios.get(pixabayBaseURL);
 
-  return data.hits;
+    if (!data) throw new Error('Oups 🤷‍♂️');
+
+    return data.hits;
+  } catch (error) {
+    console.log(error);
+  }
 }

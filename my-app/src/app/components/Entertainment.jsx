@@ -31,7 +31,7 @@ export default function Entertainment({ news }) {
   };
 
   return (
-    <section className="mb-[150]">
+    <section className="mb-[50]">
       <SectionTopWraper>
         <SectionTitle isRedColour fontWeight={500}>
           Entertainment
@@ -41,38 +41,40 @@ export default function Entertainment({ news }) {
           <NextPageBtn page={page} setPage={setPage} pageCount={pageCount} />
         </div>
       </SectionTopWraper>
-      <Pagination
-        id={page}
-        className="grid grid-cols-1 lg:grid-cols-[1fr] grid-rows-[1fr_1fr_1fr_1fr] lg:grid-rows-[2fr_1fr] xl:grid-rows-[4fr_1fr] gap-[44] lg:gap-[24] absolute top-0 left-0 w-full mb-[50]"
-      >
-        <MainNewsItem
-          article_id={mainItem.article_id}
-          category={mainItem.category}
-          image_url={mainItem.image_url}
-          creator={mainItem.creator}
-          title={mainItem.title}
-          pubDate={mainItem.pubDate}
-          getId={openModalFunc}
-          poisitionBlock={'sm:col-span-1 sm:row-span-1 text-2xl lg:text-4xl'}
-        />
+      <div className="h-[705] lg:h-[322] xl:h-[524]">
+        <Pagination
+          id={page}
+          className="grid grid-cols-1 lg:grid-cols-[1fr] grid-rows-[1fr_1fr] lg:grid-rows-[2fr_1fr] xl:grid-rows-[4fr_1fr] gap-[44] lg:gap-[24] absolute top-0 left-0 w-full"
+        >
+          <MainNewsItem
+            article_id={mainItem.article_id}
+            category={mainItem.category}
+            image_url={mainItem.image_url}
+            creator={mainItem.creator}
+            title={mainItem.title}
+            pubDate={mainItem.pubDate}
+            getId={openModalFunc}
+            poisitionBlock={'sm:col-span-1 sm:row-span-1 text-2xl lg:text-4xl'}
+          />
 
-        <ul className="flex flex-wrap justify-between gap-[16]">
-          {smallItems.map((item) => (
-            <SmallAdItem
-              key={item.article_id}
-              article_id={item.article_id}
-              category={item.category}
-              image={item.image_url}
-              creator={item.creator}
-              title={item.title}
-              pubDate={item.pubDate}
-              getId={openModalFunc}
-              imageSize={'big'}
-              isNeedColorBgText
-            />
-          ))}
-        </ul>
-      </Pagination>
+          <ul className="flex flex-col lg:flex-row justify-between gap-[16]">
+            {smallItems.map((item) => (
+              <SmallAdItem
+                key={item.article_id}
+                article_id={item.article_id}
+                category={item.category}
+                image={item.image_url}
+                creator={item.creator}
+                title={item.title}
+                pubDate={item.pubDate}
+                getId={openModalFunc}
+                imageSize={'big'}
+                isNeedColorBgText
+              />
+            ))}
+          </ul>
+        </Pagination>
+      </div>
 
       {openModal && (
         <Modal show={true} onClose={() => setOpenModal(false)}>

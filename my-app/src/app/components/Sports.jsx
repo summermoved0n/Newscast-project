@@ -47,7 +47,7 @@ export default function Sports({ news }) {
           Sports
         </SectionTitle>
         <div className="flex items-center gap-[12]">
-          <ul className="flex gap-[12]">
+          <ul className="hidden md:flex gap-[12]">
             {titleArray.map((item) => (
               <li key={item}>
                 <ColourTitleBg>{item}</ColourTitleBg>
@@ -60,33 +60,38 @@ export default function Sports({ news }) {
           </div>
         </div>
       </SectionTopWraper>
-      <Pagination id={page} className="grid grid-cols-[1fr_1fr] gap-[30]">
-        <BigAdItem
-          article_id={bigItem.article_id}
-          category={bigItem.category}
-          image_url={bigItem.image_url}
-          creator={bigItem.creator}
-          title={bigItem.title}
-          pubDate={bigItem.pubDate}
-          getId={openModalFunc}
-          description={bigItem.description}
-        />
-        <ul className="flex flex-col justify-start gap-[16]">
-          {smallItems.map((item) => (
-            <SmallAdItem
-              key={item.article_id}
-              article_id={item.article_id}
-              category={item.category}
-              image={item.image_url}
-              creator={item.creator}
-              title={item.title}
-              pubDate={item.pubDate}
-              getId={openModalFunc}
-              imageSize={'medium'}
-            />
-          ))}
-        </ul>
-      </Pagination>
+      <div className="">
+        <Pagination
+          id={page}
+          className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-[30]"
+        >
+          <BigAdItem
+            article_id={bigItem.article_id}
+            category={bigItem.category}
+            image_url={bigItem.image_url}
+            creator={bigItem.creator}
+            title={bigItem.title}
+            pubDate={bigItem.pubDate}
+            getId={openModalFunc}
+            description={bigItem.description}
+          />
+          <ul className="flex flex-col justify-start gap-[16]">
+            {smallItems.map((item) => (
+              <SmallAdItem
+                key={item.article_id}
+                article_id={item.article_id}
+                category={item.category}
+                image={item.image_url}
+                creator={item.creator}
+                title={item.title}
+                pubDate={item.pubDate}
+                getId={openModalFunc}
+                imageSize={'medium'}
+              />
+            ))}
+          </ul>
+        </Pagination>
+      </div>
 
       {openModal && (
         <Modal show={true} onClose={() => setOpenModal(false)}>

@@ -27,14 +27,14 @@ export default async function Page() {
   const weather = await getWeatherByQuery();
   const news = await getNews();
   const entertainment = await getEntertainmentNews();
-  // const sport = await getSportsNews();
-  // const lifeStyle = await getLifeStyleNews();
+  const sport = await getSportsNews();
+  const lifeStyle = await getLifeStyleNews();
   const pixabayVideo = await getPixabayVideo();
 
   return (
     <div className="font-normal">
       <Header weather={weather} news={news} />
-      <main className="px-[20] mb-[150] ">
+      <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />
         <MainNews news={news} />
@@ -43,20 +43,20 @@ export default async function Page() {
           <RecentNews news={news} />
         </div>
         <Entertainment news={entertainment} />
-        <div className="grid grid-cols-[3fr_1fr] gap-[34]">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
-            {/* <Sports news={sport} /> */}
-            {/* <LifeStyle news={lifeStyle} /> */}
-            {/* <PurchaseNow /> */}
-            {/* <Video video={pixabayVideo} /> */}
+            <Sports news={sport} />
+            <LifeStyle news={lifeStyle} />
+            <PurchaseNow />
+            <Video video={pixabayVideo} />
           </div>
           <div className="flex flex-col gap-[24]">
-            {/* <StayConnected /> */}
-            {/* <Categories /> */}
+            <StayConnected />
+            <Categories />
           </div>
         </div>
       </main>
-      {/* <FollowUs /> */}
+      <FollowUs />
       {/* <Footer /> */}
     </div>
   );
