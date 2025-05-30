@@ -19,7 +19,7 @@ const tagsArray = [
 export default function Footer() {
   return (
     <footer className="bg-[#393939] pt-[44] pb-[82]">
-      <div className="px-[20] grid grid-cols-[1fr_1fr_1fr_1fr] gap-[30]">
+      <div className="px-[20] grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr_1fr] gap-[30]">
         <div className="flex flex-col gap-[30]">
           <a href="/" rel="noopener noreferrer">
             <Image
@@ -30,8 +30,8 @@ export default function Footer() {
             />
           </a>
           <SofiaFontText className="text-sm text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto
-            tempore!
+            Follow us in social medias or leave your message in the form down
+            below and we will contact with you.
           </SofiaFontText>
           <SocialMediaBlock isFooterIcon />
         </div>

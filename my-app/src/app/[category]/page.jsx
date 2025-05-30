@@ -26,7 +26,7 @@ export default function CategoryPage() {
   const [openModal, setOpenModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
-  const smallItems = results.slice(1, results.length - 1);
+  const smallItems = !results ? null : results.slice(1, results.length - 1);
 
   useEffect(() => {
     if (!category) return;
@@ -63,7 +63,7 @@ export default function CategoryPage() {
           />
         ) : (
           <div>
-            {results.length !== 0 ? (
+            {Array.isArray(results) && results.length > 0 ? (
               <div className="">
                 <BigAdItem
                   article_id={results[0].article_id}
@@ -76,7 +76,7 @@ export default function CategoryPage() {
                   getId={openModalFunc}
                 />
 
-                <ul className="grid grid-cols-[1fr_1fr] justify-between gap-[20] mt-[40]">
+                <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr] justify-between gap-[20] mt-[40]">
                   {smallItems.map(
                     ({ article_id, image_url, creator, title, pubDate }) => (
                       <SmallAdItem
@@ -95,9 +95,11 @@ export default function CategoryPage() {
             ) : (
               <div>
                 <BackButton type="button" onClick={() => router.back()}>
-                  Back
+                  ⬅ Back
                 </BackButton>
-                <p>Sorry, but with this request "{category}" no results...</p>
+                <p className="mt-[10] font-medium text-xl text-[#393939]">
+                  Sorry, something went wrong, or try again later.
+                </p>
               </div>
             )}
           </div>

@@ -33,22 +33,26 @@ export default async function Page() {
 
   return (
     <div className="font-normal">
-      <Header weather={weather} news={news} />
+      {!weather || !news ? (
+        <p>Oops</p>
+      ) : (
+        <Header weather={weather} news={news} />
+      )}
       <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />
-        <MainNews news={news} />
+        {!news ? <p>Oops</p> : <MainNews news={news} />}
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          <DontMiss news={entertainment} />
-          <RecentNews news={news} />
+          {!entertainment ? <p></p> : <DontMiss news={entertainment} />}
+          {!news ? <p>Oops</p> : <RecentNews news={news} />}
         </div>
-        <Entertainment news={entertainment} />
+        {!entertainment ? <p>Oops</p> : <Entertainment news={entertainment} />}
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
-            <Sports news={sport} />
-            <LifeStyle news={lifeStyle} />
+            {!sport ? <p>Oops</p> : <Sports news={sport} />}
+            {!lifeStyle ? <p>Oops</p> : <LifeStyle news={lifeStyle} />}
             <PurchaseNow />
-            <Video video={pixabayVideo} />
+            {!pixabayVideo ? <p>Oops</p> : <Video video={pixabayVideo} />}
           </div>
           <div className="flex flex-col gap-[24]">
             <StayConnected />
@@ -57,7 +61,7 @@ export default async function Page() {
         </div>
       </main>
       <FollowUs />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

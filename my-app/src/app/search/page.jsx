@@ -62,7 +62,7 @@ export default function SearchPage() {
           />
         ) : (
           <ul className="flex flex-wrap justify-start gap-[20]">
-            {results.length !== 0 ? (
+            {Array.isArray(results) && results.length > 0 ? (
               results.map(
                 ({ article_id, image_url, creator, title, pubDate }) => (
                   <SmallAdItem
@@ -78,10 +78,13 @@ export default function SearchPage() {
               )
             ) : (
               <li>
-                <button type="button" onClick={() => router.back()}>
-                  Back
-                </button>
-                <p>Sorry, but with this request "{query}" no results...</p>
+                <p>
+                  Sorry, but with this request "
+                  <span className="text-xl text-red-500 font-medium">
+                    {query}
+                  </span>
+                  " no results...
+                </p>
               </li>
             )}
           </ul>

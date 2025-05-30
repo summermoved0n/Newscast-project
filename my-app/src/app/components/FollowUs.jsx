@@ -38,7 +38,7 @@ export default function FollowUs() {
         alt="man in suit"
       />
       <a
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-[46] min-h-[46] max-w-[146] max-h-[146] rounded-full bg-[rgba(194,55,133,0.6)] flex flex-col items-center justify-center gap-[13]"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[56] h-[56] sm:w-[76] sm:h-[76] md:w-[146] md:h-[146] rounded-full bg-[rgba(194,55,133,0.6)] flex flex-col items-center justify-center gap-[13]"
         href="https://www.instagram.com"
         target="_blank"
         rel="noopener noreferrer"
@@ -50,7 +50,7 @@ export default function FollowUs() {
           src={'/icons/instagram-icon.svg'}
           alt="man in suit"
         />
-        <SofiaFontText className="hidden sm:block text-lg font-medium text-white">
+        <SofiaFontText className="hidden md:block text-lg font-medium text-white">
           Follow us
         </SofiaFontText>
       </a>
