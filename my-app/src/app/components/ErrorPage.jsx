@@ -13,7 +13,7 @@ export default function ErrorPage() {
       >
         Try again
       </button>
-      <div className="flex justify-center items-center max-w-2xs mx-[10] my-auto h-fit bg-slate-600 rounded-md py-[30] px-[20]">
+      <div className="flex justify-center items-center max-w-2xs mx-[10] my-auto h-fit bg-slate-600 bg-opacity-20 rounded-md py-[30] px-[20]">
         <p>ErrorPage</p>
       </div>
     </div>
