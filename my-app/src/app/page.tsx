@@ -22,6 +22,7 @@ import StayConnected from '@/app/components/StayConnected';
 import Categories from '@/app/components/Categories';
 import FollowUs from '@/app/components/FollowUs';
 import Footer from '@/app/components/Footer';
+import ErrorPage from './components/ErrorPage';
 
 export default async function Page() {
   const weather = await getWeatherByQuery();
@@ -34,25 +35,29 @@ export default async function Page() {
   return (
     <div className="font-normal">
       {!weather || !news ? (
-        <p>Oops</p>
+        <ErrorPage />
       ) : (
         <Header weather={weather} news={news} />
       )}
       <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />
-        {!news ? <p>Oops</p> : <MainNews news={news} />}
+        {!news ? <ErrorPage /> : <MainNews news={news} />}
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          {!entertainment ? <p></p> : <DontMiss news={entertainment} />}
-          {!news ? <p>Oops</p> : <RecentNews news={news} />}
+          {!entertainment ? <ErrorPage /> : <DontMiss news={entertainment} />}
+          {!news ? <ErrorPage /> : <RecentNews news={news} />}
         </div>
-        {!entertainment ? <p>Oops</p> : <Entertainment news={entertainment} />}
+        {!entertainment ? (
+          <ErrorPage />
+        ) : (
+          <Entertainment news={entertainment} />
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
-            {!sport ? <p>Oops</p> : <Sports news={sport} />}
-            {!lifeStyle ? <p>Oops</p> : <LifeStyle news={lifeStyle} />}
+            {!sport ? <ErrorPage /> : <Sports news={sport} />}
+            {!lifeStyle ? <ErrorPage /> : <LifeStyle news={lifeStyle} />}
             <PurchaseNow />
-            {!pixabayVideo ? <p>Oops</p> : <Video video={pixabayVideo} />}
+            {!pixabayVideo ? <ErrorPage /> : <Video video={pixabayVideo} />}
           </div>
           <div className="flex flex-col gap-[24]">
             <StayConnected />
