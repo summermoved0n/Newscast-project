@@ -41,9 +41,7 @@ export async function getNews() {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.results;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function getNewsByQuery(value) {
@@ -55,9 +53,7 @@ export async function getNewsByQuery(value) {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.results;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function getImportantNews() {
@@ -69,9 +65,7 @@ export async function getImportantNews() {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.results;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function getEntertainmentNews() {
@@ -83,9 +77,7 @@ export async function getEntertainmentNews() {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.results;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function getSportsNews() {
@@ -97,9 +89,7 @@ export async function getSportsNews() {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.results;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function getLifeStyleNews() {
@@ -111,9 +101,7 @@ export async function getLifeStyleNews() {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.results;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export async function getPixabayVideo() {
@@ -123,7 +111,5 @@ export async function getPixabayVideo() {
     if (!data) throw new Error('Oups 🤷‍♂️');
 
     return data.hits;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }

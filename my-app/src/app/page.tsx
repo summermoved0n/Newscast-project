@@ -37,10 +37,11 @@ export default async function Page() {
   );
   console.log(isError);
 
-  return (
+  return !isError ? (
+    <ErrorPage />
+  ) : (
     <div className="font-normal">
       <Header weather={weather} news={news} />
-
       <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />
@@ -49,9 +50,7 @@ export default async function Page() {
           <DontMiss news={entertainment} />
           <RecentNews news={news} />
         </div>
-
         <Entertainment news={entertainment} />
-
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
             <Sports news={sport} />
