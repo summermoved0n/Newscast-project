@@ -32,32 +32,32 @@ export default async function Page() {
   const lifeStyle = await getLifeStyleNews();
   const pixabayVideo = await getPixabayVideo();
 
+  const isError = Boolean(
+    weather && news && entertainment && sport && lifeStyle && pixabayVideo
+  );
+  console.log(isError);
+
   return (
     <div className="font-normal">
-      {!weather || !news ? (
-        <ErrorPage />
-      ) : (
-        <Header weather={weather} news={news} />
-      )}
+      <Header weather={weather} news={news} />
+
       <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />
-        {!news ? <ErrorPage /> : <MainNews news={news} />}
+        <MainNews news={news} />
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
-          {!entertainment ? <ErrorPage /> : <DontMiss news={entertainment} />}
-          {!news ? <ErrorPage /> : <RecentNews news={news} />}
+          <DontMiss news={entertainment} />
+          <RecentNews news={news} />
         </div>
-        {!entertainment ? (
-          <ErrorPage />
-        ) : (
-          <Entertainment news={entertainment} />
-        )}
+
+        <Entertainment news={entertainment} />
+
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34]">
           <div className="flex flex-col gap-[50px]">
-            {!sport ? <ErrorPage /> : <Sports news={sport} />}
-            {!lifeStyle ? <ErrorPage /> : <LifeStyle news={lifeStyle} />}
+            <Sports news={sport} />
+            <LifeStyle news={lifeStyle} />
             <PurchaseNow />
-            {!pixabayVideo ? <ErrorPage /> : <Video video={pixabayVideo} />}
+            <Video video={pixabayVideo} />
           </div>
           <div className="flex flex-col gap-[24]">
             <StayConnected />
