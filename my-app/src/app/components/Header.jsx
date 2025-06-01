@@ -3,21 +3,30 @@
 import Image from 'next/image';
 import { Sofia_Sans } from 'next/font/google';
 
+import { getWeatherByQuery } from '@/lib/api';
 import { changeKelvinToCelsius, correctFormOfData } from '@/lib/helpers';
 import SocialMediaBlock from './SocialMediaBlock';
+import { useEffect, useState } from 'react';
 
 const font = Sofia_Sans({ subsets: ['latin'] });
 
-export default function Header({ weather, news }) {
-  const temperature = changeKelvinToCelsius(weather.main.temp);
-  const cityName = weather.name;
-  const dataToday = correctFormOfData();
+export default function Header({ news }) {
+  const [weather, setWeather] = useState(null);
+  // const temperature = changeKelvinToCelsius(weather.main.temp);
+  // const cityName = weather.name;
+  // const dataToday = correctFormOfData();
+
+  useEffect(() => {
+    getWeatherByQuery().then((data) => {
+      console.log(data);
+    });
+  }, []);
 
   return (
     <header
       className={`${font.className} bg-white flex h-[42] items-center justify-between shadow-[0_1px_10px_0_rgba(246,80,80,0.15)] text-xs mb-[26] px-[20]`}
     >
-      <div className="flex items-center justify-between h-full w-full sm:w-auto">
+      {/* <div className="flex items-center justify-between h-full w-full sm:w-auto">
         <Image
           className="mr-[7]"
           width={16}
@@ -51,7 +60,7 @@ export default function Header({ weather, news }) {
       </div>
       <div className="hidden lg:block">
         <SocialMediaBlock />
-      </div>
+      </div> */}
     </header>
   );
 }

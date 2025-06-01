@@ -25,7 +25,6 @@ import Footer from '@/app/components/Footer';
 import ErrorPage from './components/ErrorPage';
 
 export default async function Page() {
-  const weather = await getWeatherByQuery();
   const news = await getNews();
   const entertainment = await getEntertainmentNews();
   const sport = await getSportsNews();
@@ -33,15 +32,14 @@ export default async function Page() {
   const pixabayVideo = await getPixabayVideo();
 
   const isError = Boolean(
-    weather && news && entertainment && sport && lifeStyle && pixabayVideo
+    news && entertainment && sport && lifeStyle && pixabayVideo
   );
-  console.log(isError);
 
   return !isError ? (
     <ErrorPage />
   ) : (
     <div className="font-normal">
-      <Header weather={weather} news={news} />
+      <Header news={news} />
       <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />

@@ -7,6 +7,7 @@ import { capitalizeFirstLetter } from '../../lib/helpers';
 
 import SmallAdItem from '../components/SmallAdItem';
 import Hero from '../components/Hero';
+import Header from '../components/Header';
 import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import SectionTopWraper from '../components/SectionTopWraper';
@@ -46,6 +47,7 @@ export default function SearchPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow px-[20] mb-[50]">
+        <Header />
         <Hero />
         <SectionTopWraper className="items-center">
           <SectionTitle isRedColour={true} fontWeight={500}>

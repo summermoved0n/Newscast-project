@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { getWeatherByQuery } from '../../lib/api';
 
 import ErrorBtn from './ErrorBtn';
 import Loader from './Loader';
@@ -14,13 +15,12 @@ export default function ErrorPage() {
 
   useEffect(() => {
     return () => {
-      clearTimeout(timeoutRef.current); // очищення при анмаунті компонента
+      clearTimeout(timeoutRef.current);
     };
   }, []);
 
   const startLoading = () => {
     setLoading(true);
-    // запускаємо таймер тільки при старті лоадера
     timeoutRef.current = setTimeout(() => {
       setShowCancelBtn(true);
     }, 5000);
@@ -29,12 +29,12 @@ export default function ErrorPage() {
   const stopLoading = () => {
     setLoading(false);
     setShowCancelBtn(false);
-    clearTimeout(timeoutRef.current); // очищення таймера
+    clearTimeout(timeoutRef.current);
   };
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-50 my-auto bg-gray-900 text-white px-[20] pt-[80]">
-      <div className="text-center p-6 bg-slate-600 bg-opacity-20  rounded-md">
+      <div className="text-center p-6 bg-slate-600 bg-opacity-20 rounded-md">
         <h2 className="text-xl font-semibold text-red-500 mb-4">
           Oops! Something went wrong 😕
         </h2>
