@@ -1,5 +1,4 @@
 import {
-  getWeatherByQuery,
   getNews,
   getEntertainmentNews,
   getSportsNews,

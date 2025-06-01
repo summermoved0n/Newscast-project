@@ -8,7 +8,7 @@ export default function Modal({ show, children, onClose }) {
     <Transition.Root as={Fragment} show={show}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-50 flex items-center overflow-y-auto"
+        className="fixed inset-0 z-50 flex items-start sm:items-center overflow-y-auto"
         onClose={onClose}
       >
         <Transition.Child

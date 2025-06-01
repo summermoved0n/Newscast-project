@@ -24,16 +24,16 @@ export async function getWeatherByQuery() {
             );
 
             if (weather) {
-              resolve(weather.data); // Повертає дані погоди
+              resolve(weather.data);
             } else {
-              reject(weather); // Повертає помилку з API
+              reject(weather);
             }
           } catch (err) {
-            reject(err); // Помилка запиту
+            reject(err);
           }
         },
         (error) => {
-          reject(error); // Помилка геолокації
+          reject(error);
         }
       );
     } else {
