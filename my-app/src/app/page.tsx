@@ -38,7 +38,7 @@ export default async function Page() {
     <ErrorPage />
   ) : (
     <div className="font-normal">
-      <Header news={news} />
+      <Header />
       <main className="px-[20] mb-[50] ">
         <Hero />
         <Navigation />
