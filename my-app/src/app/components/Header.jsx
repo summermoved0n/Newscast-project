@@ -11,14 +11,15 @@ import { useEffect, useState } from 'react';
 const font = Sofia_Sans({ subsets: ['latin'] });
 
 export default function Header({ news }) {
-  const [weather, setWeather] = useState(null);
-  // const temperature = changeKelvinToCelsius(weather.main.temp);
-  // const cityName = weather.name;
-  // const dataToday = correctFormOfData();
+  const [temperature, setTemperature] = useState(null);
+  const [cityName, setCityName] = useState(null);
+
+  const dataToday = correctFormOfData();
 
   useEffect(() => {
     getWeatherByQuery().then((data) => {
-      console.log(data);
+      setTemperature(changeKelvinToCelsius(data.main.temp));
+      setCityName(data.name);
     });
   }, []);
 
@@ -26,7 +27,7 @@ export default function Header({ news }) {
     <header
       className={`${font.className} bg-white flex h-[42] items-center justify-between shadow-[0_1px_10px_0_rgba(246,80,80,0.15)] text-xs mb-[26] px-[20]`}
     >
-      {/* <div className="flex items-center justify-between h-full w-full sm:w-auto">
+      <div className="flex items-center justify-between h-full w-full sm:w-auto">
         <Image
           className="mr-[7]"
           width={16}
@@ -60,7 +61,7 @@ export default function Header({ news }) {
       </div>
       <div className="hidden lg:block">
         <SocialMediaBlock />
-      </div> */}
+      </div>
     </header>
   );
 }
