@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 const font = Sofia_Sans({ subsets: ['latin'] });
 
-export default function Header({ news }) {
+export default function Header() {
   const [temperature, setTemperature] = useState(null);
   const [cityName, setCityName] = useState(null);
 
@@ -57,7 +57,9 @@ export default function Header({ news }) {
         <p className="flex items-center px-[7] text-white bg-red-500 h-full sm:mr-[17]">
           Breaking News
         </p>
-        <p className="hidden sm:block">{news[0].title}</p>
+        <p className="hidden sm:block">
+          A website for tracking the latest news in the world.
+        </p>
       </div>
       <div className="hidden lg:block">
         <SocialMediaBlock />

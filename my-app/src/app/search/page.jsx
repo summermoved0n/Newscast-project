@@ -46,8 +46,8 @@ export default function SearchPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Header />
       <div className="flex-grow px-[20] mb-[50]">
-        <Header />
         <Hero />
         <SectionTopWraper className="items-center">
           <SectionTitle isRedColour={true} fontWeight={500}>
@@ -63,7 +63,7 @@ export default function SearchPage() {
             loading={loading}
           />
         ) : (
-          <ul className="flex flex-wrap justify-start gap-[20]">
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-[20]">
             {Array.isArray(results) && results.length > 0 ? (
               results.map(
                 ({ article_id, image_url, creator, title, pubDate }) => (

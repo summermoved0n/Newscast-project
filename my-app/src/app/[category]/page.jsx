@@ -7,6 +7,7 @@ import { capitalizeFirstLetter } from '../../lib/helpers';
 
 import SmallAdItem from '../components/SmallAdItem';
 import Hero from '../components/Hero';
+import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import BigAdItem from '../components/BigAdItem';
 import Footer from '../components/Footer';
@@ -48,6 +49,7 @@ export default function CategoryPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Header />
       <div className="flex-grow px-[20] mb-[50]">
         <Hero />
         <Navigation />
