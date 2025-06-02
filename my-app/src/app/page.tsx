@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 import {
   getNews,
   getEntertainmentNews,
@@ -12,16 +14,17 @@ import Navigation from '@/app/components/Navigation';
 import MainNews from '@/app/components/MainNews';
 import DontMiss from '@/app/components/DontMiss';
 import RecentNews from '@/app/components/RecentNews';
-import Entertainment from '@/app/components/Entertainment';
-import Sports from '@/app/components/Sports';
-import LifeStyle from '@/app/components/LifeStyle';
-import PurchaseNow from '@/app/components/PurchaseNow';
-import Video from '@/app/components/Video';
-import StayConnected from '@/app/components/StayConnected';
-import Categories from '@/app/components/Categories';
-import FollowUs from '@/app/components/FollowUs';
-import Footer from '@/app/components/Footer';
 import ErrorPage from './components/ErrorPage';
+
+const Entertainment = dynamic(() => import('@/app/components/Entertainment'));
+const Sports = dynamic(() => import('@/app/components/Sports'));
+const LifeStyle = dynamic(() => import('@/app/components/LifeStyle'));
+const PurchaseNow = dynamic(() => import('@/app/components/PurchaseNow'));
+const Video = dynamic(() => import('@/app/components/Video'));
+const StayConnected = dynamic(() => import('@/app/components/StayConnected'));
+const Categories = dynamic(() => import('@/app/components/Categories'));
+const FollowUs = dynamic(() => import('@/app/components/FollowUs'));
+const Footer = dynamic(() => import('@/app/components/Footer'));
 
 export default async function Page() {
   const news = await getNews();
