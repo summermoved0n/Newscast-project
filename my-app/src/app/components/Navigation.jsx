@@ -23,7 +23,7 @@ export default function Navigation() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <aside className="flex justify-between mb-[25px] flex bg-[#393939]">
+    <aside className="flex justify-between mb-[25px] bg-[#393939]">
       <ul className="text-white flex">
         {navArray.map(({ name, page }) => (
           <NavigationItem
