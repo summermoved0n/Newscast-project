@@ -10,7 +10,7 @@ import SofiaFontText from './SofiaFontText';
 export default function StayConnected() {
   return (
     <section>
-      <div className="flex justify-between mb-[26] relative border-b border-[#393939] pb-[14px] after:w-[70px] after:h-px after:absolute after:bottom-[-1px] after:left-0 after:border-b after:border-red-500">
+      <div className="flex justify-between mb-[26px] relative border-b border-[#393939] pb-[14px] after:w-[70px] after:h-px after:absolute after:bottom-[-1px] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour fontWeight={500} fontSize={'small'}>
           Stay Connected
         </SectionTitle>

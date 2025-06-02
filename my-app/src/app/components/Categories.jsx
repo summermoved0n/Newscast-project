@@ -21,7 +21,7 @@ const categoriesData = [
 export default function Categories() {
   return (
     <section>
-      <div className="flex justify-between mb-[24px] relative border-b border-[#393939] pb-[14px]  after:w-[70px] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+      <div className="flex justify-between mb-[24px] relative border-b border-[#393939] pb-[14px]  after:w-[70px] after:h-px after:absolute after:bottom-[-1px] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour={true} fontWeight={500} fontSize={'small'}>
           Categories
         </SectionTitle>
