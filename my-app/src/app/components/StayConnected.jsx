@@ -10,14 +10,18 @@ import SofiaFontText from './SofiaFontText';
 export default function StayConnected() {
   return (
     <section>
-      <div className="flex justify-between mb-[26] relative border-b border-[#393939] pb-[14]  after:w-[70] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+      <div className="flex justify-between mb-[26] relative border-b border-[#393939] pb-[14px] after:w-[70px] after:h-px after:absolute after:bottom-[-1px] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour fontWeight={500} fontSize={'small'}>
           Stay Connected
         </SectionTitle>
       </div>
-      <ul className="flex flex-wrap justify-between gap-[10] mb-[26]">
+      <ul className="flex flex-wrap justify-between gap-[10px] mb-[26px]">
         <li>
-          <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
+          <ColourTitleBg
+            className="flex gap-[12px]"
+            isMediaCard
+            isNeedSofiaFont
+          >
             <Image
               className="invert-[1]"
               width={20}
@@ -32,7 +36,11 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
         <li>
-          <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
+          <ColourTitleBg
+            className="flex gap-[12px]"
+            isMediaCard
+            isNeedSofiaFont
+          >
             <Image
               className="invert-[1]"
               width={20}
@@ -47,7 +55,11 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
         <li>
-          <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
+          <ColourTitleBg
+            className="flex gap-[12px]"
+            isMediaCard
+            isNeedSofiaFont
+          >
             <Image
               className="invert-[1]"
               width={20}
@@ -62,7 +74,11 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
         <li>
-          <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
+          <ColourTitleBg
+            className="flex gap-[12px]"
+            isMediaCard
+            isNeedSofiaFont
+          >
             <Image
               className="invert-[1]"
               width={20}
@@ -77,7 +93,11 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
         <li>
-          <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
+          <ColourTitleBg
+            className="flex gap-[12px]"
+            isMediaCard
+            isNeedSofiaFont
+          >
             <Image
               className="invert-[1]"
               width={20}
@@ -92,7 +112,11 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
         <li>
-          <ColourTitleBg className="flex gap-[12]" isMediaCard isNeedSofiaFont>
+          <ColourTitleBg
+            className="flex gap-[12px]"
+            isMediaCard
+            isNeedSofiaFont
+          >
             <Image
               className="invert-[1]"
               width={20}
@@ -107,7 +131,7 @@ export default function StayConnected() {
           </ColourTitleBg>
         </li>
       </ul>
-      <div className="bg-[url(/images/stay-connected-ad.jpg)] bg-cover bg-center w-full h-[290] flex justify-center items-center mb-[24]">
+      <div className="bg-[url('/images/stay-connected-ad.jpg')] bg-cover bg-center w-full h-[290px] flex justify-center items-center mb-[24px]">
         <SofiaFontText className="text-white text-4xl">Ad</SofiaFontText>
       </div>
       <EmailForm isNeedTitle={'Get Latest Updates'} />

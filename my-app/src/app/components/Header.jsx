@@ -25,18 +25,18 @@ export default function Header() {
 
   return (
     <header
-      className={`${font.className} bg-white flex h-[42] items-center justify-between shadow-[0_1px_10px_0_rgba(246,80,80,0.15)] text-xs mb-[26] px-[20]`}
+      className={`${font.className} bg-white flex h-[42px] items-center justify-between shadow-[0_1px_10px_0_rgba(246,80,80,0.15)] text-xs mb-[26px] px-[20px]`}
     >
       <div className="flex items-center justify-between h-full w-full sm:w-auto">
         <Image
-          className="mr-[7]"
+          className="mr-[7px]"
           width={16}
           height={16}
           src="/icons/weather-icon.svg"
           alt="weather icon"
         />
-        <p className="mr-[8] relative">
-          <span className="flex justify-center w-[26]">{temperature}</span>
+        <p className="mr-[8px] relative">
+          <span className="flex justify-center w-[26px]">{temperature}</span>
           <Image
             className="absolute top-0 right-0"
             width={10}
@@ -45,16 +45,16 @@ export default function Header() {
             alt="celsius icon"
           />
         </p>
-        <p className="mr-[16]">{cityName}</p>
+        <p className="mr-[16px]">{cityName}</p>
         <Image
-          className="mr-[12]"
+          className="mr-[12px]"
           width={16}
           height={16}
           src="/icons/clock-icon.svg"
           alt="clock icon"
         />
-        <p className="mr-[14]">{dataToday}</p>
-        <p className="flex items-center px-[7] text-white bg-red-500 h-full sm:mr-[17]">
+        <p className="mr-[14px]">{dataToday}</p>
+        <p className="flex items-center px-[7px] text-white bg-red-500 h-full sm:mr-[17px]">
           Breaking News
         </p>
         <p className="hidden sm:block">

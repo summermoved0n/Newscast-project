@@ -48,7 +48,7 @@ export default function CustomPlayer({
         playing && togglePlay();
       }}
     >
-      <span className={`top-[25] left-[25] absolute z-10`}>
+      <span className={`top-[25px] left-[25px] absolute z-10`}>
         <ColourTitleBg isNeedSofiaFont>
           {capitalizeFirstLetter(type)}
         </ColourTitleBg>
@@ -67,8 +67,8 @@ export default function CustomPlayer({
             } absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent  rounded-full border-[2px] border-white`}
           >
             <svg
-              width={small ? '16' : '20'}
-              height={small ? '16' : '24'}
+              width={small ? '16px' : '20px'}
+              height={small ? '16px' : '24px'}
               viewBox="0 0 20 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -82,8 +82,8 @@ export default function CustomPlayer({
         )}
       </div>
       {small ? (
-        <div onClick={(e) => e.stopPropagation()} className={`mt-[25]`}>
-          <p className={`${font.className} text-[#393939] text-xs mb-[6]`}>
+        <div onClick={(e) => e.stopPropagation()} className={`mt-[25px]`}>
+          <p className={`${font.className} text-[#393939] text-xs mb-[6px]`}>
             {creator} -{' '}
             <span className={`text-[rgba(57,57,57,0.6)]`}>{views} views</span>
           </p>
@@ -93,9 +93,9 @@ export default function CustomPlayer({
         </div>
       ) : (
         <div
-          className={`flex items-start justify-between md:flex-col bottom-[15] md:bottom-[50] left-[15] md:left-[25] absolute z-10 text-white`}
+          className={`flex items-start justify-between md:flex-col bottom-[15px] md:bottom-[50px] left-[15px] md:left-[25px] absolute z-10 text-white`}
         >
-          <p className={`${font.className} text-xs mb-[6]`}>
+          <p className={`${font.className} text-xs mb-[6px]`}>
             {creator} - {views} views
           </p>
           <p className="font-medium md:text-4xl line-clamp-1 md:line-clamp-2 w-[50%]">

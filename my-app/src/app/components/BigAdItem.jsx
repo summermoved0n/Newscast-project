@@ -26,12 +26,12 @@ export default function BigAdItem({
       className="relative cursor-pointer"
       onClick={(e) => getId(e.currentTarget.id)}
     >
-      <span className="absolute top-[25] left-[25] z-10">
+      <span className="absolute top-[25px] left-[25px] z-10">
         <ColourTitleBg isNeedSofiaFont>
           {capitalizeFirstLetter(category)}
         </ColourTitleBg>
       </span>
-      <div className="relative w-full h-[250px] mb-[25] z-0">
+      <div className="relative w-full h-[250px] mb-[25px] z-0">
         <img
           className={clsx(
             !image_url && 'bg-gray-500',
@@ -43,13 +43,13 @@ export default function BigAdItem({
           {...props}
         />
       </div>
-      <p className="text-[#393939] text-xs mb-[6]">
+      <p className="text-[#393939] text-xs mb-[6px]">
         {!creator || creator === '' ? 'Unknown' : creator} -{' '}
         <span className={`${font.className} text-[rgba(57,57,57,0.6)]`}>
           {changeDataFormat(pubDate)}
         </span>
       </p>
-      <p className="text-[#393939] font-medium mb-[6]">{title}</p>
+      <p className="text-[#393939] font-medium mb-[6px]">{title}</p>
       <p className={`${font.className} text-[rgba(57,57,57,0.6)] line-clamp-3`}>
         {description}
       </p>

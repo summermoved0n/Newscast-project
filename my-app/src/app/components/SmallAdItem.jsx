@@ -36,7 +36,7 @@ export default function SmallAdItem({
       key={article_id}
       id={article_id}
       onClick={getIdByClick}
-      className="relative flex gap-[20] cursor-pointer"
+      className="relative flex gap-[20px] cursor-pointer"
     >
       <div
         className={clsx(
@@ -47,7 +47,7 @@ export default function SmallAdItem({
         )}
       >
         {isNeedColorBgText && (
-          <span className="absolute top-[6] left-[6] z-10">
+          <span className="absolute top-[6px] left-[6px] z-10">
             <ColourTitleBg isNeedSofiaFont={true}>
               {capitalizeFirstLetter(category)}
             </ColourTitleBg>
@@ -65,7 +65,7 @@ export default function SmallAdItem({
         />
       </div>
       <div className="flex flex-col justify-center max-w-[250px]">
-        <p className="text-[#393939] text-xs mb-[6]">
+        <p className="text-[#393939] text-xs mb-[6px]">
           {!creator || creator === '' ? 'Unknown' : creator} -{' '}
           <span className={`${font.className} text-[rgba(57,57,57,0.6)]`}>
             {changeDataFormat(pubDate)}

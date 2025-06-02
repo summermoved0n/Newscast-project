@@ -38,7 +38,7 @@ export default function PageSelect({ className = '' }) {
 
   return (
     <li
-      className={`${className} flex gap-[10] py-[15] px-[17] cursor-pointer relative`}
+      className={`${className} flex gap-[10px] py-[15px] px-[17px] cursor-pointer relative`}
       ref={dropdownRef}
       onClick={() => setIsOpenSelect(!isOpenSelect)}
     >
@@ -53,7 +53,7 @@ export default function PageSelect({ className = '' }) {
 
       {isOpenSelect && (
         <ul
-          className="absolute z-50 p-[10] top-[55] left-0 bg-gray-300 rounded-lg text-[#393939]
+          className="absolute z-50 p-[10px] top-[55px] left-0 bg-gray-300 rounded-lg text-[#393939]
 "
         >
           {listOfOptions.map(({ name, value }) => (

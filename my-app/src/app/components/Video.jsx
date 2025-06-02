@@ -20,20 +20,20 @@ export default function Video({ video }) {
   const bigItem = video[startIndex];
   const smallItems = video.slice(startIndex + 1, startIndex + 4);
   return (
-    <section className="mb-[0]">
+    <section className="mb-0">
       <SectionTopWraper>
         <SectionTitle isRedColour fontWeight={500}>
           Video
         </SectionTitle>
-        <div className="flex gap-[12] items-center">
-          <ul className="hidden md:flex gap-[12]">
+        <div className="flex gap-[12px] items-center">
+          <ul className="hidden md:flex gap-[12px]">
             {titleArray.map((item) => (
               <li key={item}>
                 <ColourTitleBg>{item}</ColourTitleBg>
               </li>
             ))}
           </ul>
-          <div className="flex gap-[10]">
+          <div className="flex gap-[10px]">
             <PrevPageBtn page={page} setPage={setPage} pageCount={pageCount} />
             <NextPageBtn page={page} setPage={setPage} pageCount={pageCount} />
           </div>
@@ -41,7 +41,7 @@ export default function Video({ video }) {
       </SectionTopWraper>
       <Pagination
         id={page}
-        className="grid grid-cols-[1fr] md:grid-rows-[2fr_1fr] gap-[24]"
+        className="grid grid-cols-[1fr] md:grid-rows-[2fr_1fr] gap-[24px]"
       >
         <VideoItem
           src={bigItem.videos.medium.url}
@@ -50,7 +50,7 @@ export default function Video({ video }) {
           type={bigItem.type}
           tags={bigItem.tags}
         />
-        <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr] justify-between gap-[24]">
+        <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr] justify-between gap-[24px]">
           {smallItems.map((item) => (
             <li key={item.id}>
               <VideoItem

@@ -21,17 +21,17 @@ const categoriesData = [
 export default function Categories() {
   return (
     <section>
-      <div className="flex justify-between mb-[24] relative border-b border-[#393939] pb-[14]  after:w-[70] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+      <div className="flex justify-between mb-[24px] relative border-b border-[#393939] pb-[14px]  after:w-[70px] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour={true} fontWeight={500} fontSize={'small'}>
           Categories
         </SectionTitle>
       </div>
-      <ul className="flex flex-col justify-between gap-[12]">
+      <ul className="flex flex-col justify-between gap-[12px]">
         {categoriesData.map(({ categorie, value }) => (
           <li key={categorie} className="flex items-center justify-between">
             <div className="flex items-center">
               <Image
-                className="mr-[12]"
+                className="mr-[12px]"
                 width={6}
                 height={10}
                 src={'/icons/arrow-right-icon.svg'}

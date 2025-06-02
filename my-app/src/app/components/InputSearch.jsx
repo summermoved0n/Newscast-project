@@ -26,7 +26,7 @@ export default function InputSearch() {
   return (
     <form className="flex relative group" onSubmit={handleSubmitForm}>
       <input
-        className={`${font.className} w-[120] bg-[#393939] border-solid border-l border-[rgba(255,255,255,0.3)] font-light text-white placeholder:text-[rgba(255,255,255,0.3)] placeholder:text-xs pl-[16] pr-[40] outline-none focus:placeholder:text-white sm:w-[150]`}
+        className={`${font.className} w-[120px] bg-[#393939] border-solid border-l border-[rgba(255,255,255,0.3)] font-light text-white placeholder:text-[rgba(255,255,255,0.3)] placeholder:text-xs pl-[16px] pr-[40px] outline-none focus:placeholder:text-white sm:w-[150px]`}
         type="text"
         placeholder="Search for"
         name="search"
@@ -35,12 +35,12 @@ export default function InputSearch() {
         autoComplete="off"
       />
       <button
-        className="flex items-center justify-center w-[20] h-[20] absolute top-[50%] right-[16] -translate-y-1/2 cursor-pointer"
+        className="flex items-center justify-center w-[20px] h-[20px] absolute top-1/2 right-[16px] -translate-y-1/2 cursor-pointer"
         type="submit"
       >
         <svg
-          width="12"
-          height="12"
+          width="12px"
+          height="12px"
           viewBox="0 0 12 12"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

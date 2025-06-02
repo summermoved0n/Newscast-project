@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { getWeatherByQuery } from '../../lib/api';
 
 import ErrorBtn from './ErrorBtn';
 import Loader from './Loader';
@@ -33,7 +32,7 @@ export default function ErrorPage() {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-50 my-auto bg-gray-900 text-white px-[20] pt-[80]">
+    <div className="fixed top-0 left-0 w-full h-full z-50 my-auto bg-gray-900 text-white px-[20px] pt-[80px]">
       <div className="text-center p-6 bg-slate-600 bg-opacity-20 rounded-md">
         <h2 className="text-xl font-semibold text-red-500 mb-4">
           Oops! Something went wrong 😕
@@ -56,7 +55,7 @@ export default function ErrorPage() {
           . We’ll look into it as soon as possible.
         </p>
         <ErrorBtn
-          className="h-[40] w-[120] bg-cyan-700 hover:bg-cyan-500 bg-opacity-40 rounded-md transition-all"
+          className="h-[40px] w-[120px] bg-cyan-700 hover:bg-cyan-500 bg-opacity-40 rounded-md transition-all"
           onClick={() => {
             startLoading();
             router.refresh();

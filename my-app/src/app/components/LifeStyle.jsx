@@ -44,15 +44,15 @@ export default function LifeStyle({ news }) {
         <SectionTitle isRedColour={true} fontWeight={500}>
           Life Style
         </SectionTitle>
-        <div className="flex items-center gap-[12]">
-          <ul className="hidden md:flex gap-[12]">
+        <div className="flex items-center gap-[12px]">
+          <ul className="hidden md:flex gap-[12px]">
             {titleArray.map((item) => (
               <li key={item}>
                 <ColourTitleBg>{item}</ColourTitleBg>
               </li>
             ))}
           </ul>
-          <div className="flex gap-[10]">
+          <div className="flex gap-[10px]">
             <PrevPageBtn page={page} setPage={setPage} pageCount={pageCount} />
             <NextPageBtn page={page} setPage={setPage} pageCount={pageCount} />
           </div>
@@ -60,7 +60,7 @@ export default function LifeStyle({ news }) {
       </SectionTopWraper>
       <Pagination
         id={page}
-        className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-[30]"
+        className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-[30px]"
       >
         <div className="flex flex-col gap-[26px]">
           <BigAdItem

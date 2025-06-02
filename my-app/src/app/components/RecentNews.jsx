@@ -20,12 +20,12 @@ export default function RecentNews({ news }) {
 
   return (
     <section>
-      <div className="flex justify-between mb-[20] relative border-b border-[#393939] pb-[14]  after:w-[70] after:h-px after:absolute after:bottom-[-1] after:left-0 after:border-b after:border-red-500">
+      <div className="flex justify-between mb-[20px] relative border-b border-[#393939] pb-[14px] after:w-[70px] after:h-px after:absolute after:bottom-[-1px] after:left-0 after:border-b after:border-red-500">
         <SectionTitle isRedColour fontWeight={500} fontSize={'small'}>
           Recent
         </SectionTitle>
       </div>
-      <ul className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-start  justify-between gap-[10]">
+      <ul className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-start  justify-between gap-[10px]">
         <SmallAdItem
           article_id={news[4].article_id}
           image={news[4].image_url}

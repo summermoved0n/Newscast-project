@@ -23,7 +23,7 @@ export default function ColourTitleBg({
   return (
     <p
       className={clsx(
-        isMediaCard ? 'p-[12]' : 'py-[6] px-[8]',
+        isMediaCard ? 'p-[12px]' : 'py-[6px] px-[8px]',
         `${className} w-fit text-white text-xs font-normal`,
         isNeedSofiaFont && font.className
       )}

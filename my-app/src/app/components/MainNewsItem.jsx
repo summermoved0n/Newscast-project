@@ -1,5 +1,6 @@
-import { changeDataFormat, capitalizeFirstLetter } from '@/lib/helpers';
+'use client'
 
+import { changeDataFormat, capitalizeFirstLetter } from '@/lib/helpers';
 import ColourTitleBg from '@/app/components/ColourTitleBg';
 
 export default function MainNewsItem({
@@ -16,7 +17,7 @@ export default function MainNewsItem({
     <div
       id={article_id}
       key={article_id}
-      className={`${poisitionBlock} font-medium bg-cover bg-center relative p-[15] flex flex-col justify-between cursor-pointer`}
+      className={`${poisitionBlock} font-medium bg-cover bg-center relative p-[15px] flex flex-col justify-between cursor-pointer`}
       style={{ backgroundImage: `url(${image_url})` }}
       onClick={(e) => getId(e.currentTarget.id)}
     >

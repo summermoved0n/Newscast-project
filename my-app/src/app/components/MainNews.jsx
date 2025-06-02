@@ -17,7 +17,7 @@ export default function MainNews({ news }) {
   };
 
   return (
-    <section className="grid grid-cols-1 grid-rows-[2fr_1fr_1fr_1fr] sm:grid-cols-[2fr_1fr_1fr] sm:grid-rows-2 gap-[15] mb-[58]">
+    <section className="grid grid-cols-1 grid-rows-[2fr_1fr_1fr_1fr] sm:grid-cols-[2fr_1fr_1fr] sm:grid-rows-2 gap-[15px] mb-[58px]">
       <MainNewsItem
         article_id={news[0].article_id}
         category={news[0].category}

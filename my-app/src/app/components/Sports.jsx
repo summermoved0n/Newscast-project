@@ -46,24 +46,24 @@ export default function Sports({ news }) {
         <SectionTitle isRedColour={true} fontWeight={500}>
           Sports
         </SectionTitle>
-        <div className="flex items-center gap-[12]">
-          <ul className="hidden md:flex gap-[12]">
+        <div className="flex items-center gap-[12px]">
+          <ul className="hidden md:flex gap-[12px]">
             {titleArray.map((item) => (
               <li key={item}>
                 <ColourTitleBg>{item}</ColourTitleBg>
               </li>
             ))}
           </ul>
-          <div className="flex gap-[10]">
+          <div className="flex gap-[10px]">
             <PrevPageBtn page={page} setPage={setPage} pageCount={pageCount} />
             <NextPageBtn page={page} setPage={setPage} pageCount={pageCount} />
           </div>
         </div>
       </SectionTopWraper>
-      <div className="">
+      <div>
         <Pagination
           id={page}
-          className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-[30]"
+          className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-[30px]"
         >
           <BigAdItem
             article_id={bigItem.article_id}
@@ -75,7 +75,7 @@ export default function Sports({ news }) {
             getId={openModalFunc}
             description={bigItem.description}
           />
-          <ul className="flex flex-col justify-start gap-[16]">
+          <ul className="flex flex-col justify-start gap-[16px]">
             {smallItems.map((item) => (
               <SmallAdItem
                 key={item.article_id}

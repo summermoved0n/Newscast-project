@@ -24,7 +24,7 @@ export default function Modal({ show, children, onClose }) {
         </Transition.Child>
         <Dialog.Panel className="relative transform overflow-hidden sm:rounded-lg bg-white shadow-xl transition-all p-7 sm:my-auto mx-auto sm:my-10 sm:w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
           <button
-            className="absolute w-[30] h-[30] sm:w-[20] sm:h-[20] top-[20] right-[20] sm:top-[15] sm:right-[15] text-black font-semibold"
+            className="absolute w-[30px] h-[30px] sm:w-[20px] sm:h-[20px] top-[20px] right-[20px] sm:top-[15px] sm:right-[15px] text-black font-semibold"
             onClick={onClose}
           >
             ✕

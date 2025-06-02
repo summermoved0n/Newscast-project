@@ -1,5 +1,6 @@
-import clsx from 'clsx';
+'use client'
 
+import clsx from 'clsx';
 import Link from 'next/link';
 
 export default function NavigationItem({
@@ -23,14 +24,14 @@ export default function NavigationItem({
       <Link
         href={pathname}
         className={clsx(
-          selectItem ? 'py-[10] px-[10]' : 'py-[15] px-[17]',
+          selectItem ? 'py-[10px] px-[10px]' : 'py-[15px] px-[17px]',
           'flex items-center justify-center relative',
           current &&
             !smallScreen &&
-            'after:w-[40%] after:absolute after:bottom-[10] after:border after:border-white',
+            'after:w-[40%] after:absolute after:bottom-[10px] after:border after:border-white',
           current &&
             smallScreen &&
-            'after:w-[40%] after:absolute after:bottom-[5] after:border after:border-red-500'
+            'after:w-[40%] after:absolute after:bottom-[5px] after:border after:border-red-500'
         )}
         {...props}
       >

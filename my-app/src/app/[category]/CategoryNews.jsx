@@ -50,7 +50,7 @@ export default function CategoryPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="flex-grow px-[20] mb-[50]">
+      <div className="flex-grow px-[20px] mb-[50px]">
         <Hero />
         <Navigation />
         <SectionTopWraper className="items-center">
@@ -78,7 +78,7 @@ export default function CategoryPage() {
                   getId={openModalFunc}
                 />
 
-                <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr] justify-between gap-[20] mt-[40]">
+                <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr] justify-between gap-[20px] mt-[40px]">
                   {smallItems.map(
                     ({ article_id, image_url, creator, title, pubDate }) => (
                       <SmallAdItem
@@ -99,7 +99,7 @@ export default function CategoryPage() {
                 <BackButton type="button" onClick={() => router.back()}>
                   ⬅ Back
                 </BackButton>
-                <p className="mt-[10] font-medium text-xl text-[#393939]">
+                <p className="mt-[10px] font-medium text-xl text-[#393939]">
                   Sorry, something went wrong, or try again later.
                 </p>
               </div>

@@ -42,23 +42,23 @@ export default async function Page() {
   ) : (
     <div className="font-normal">
       <Header />
-      <main className="px-[20] mb-[50] ">
+      <main className="px-[20px] mb-[50px] ">
         <Hero />
         <Navigation />
         <MainNews news={news} />
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34] mb-[30]">
+        <div className="grid grid-cols-1 xl:grid-cols-[3fr_1fr] lg:grid-cols-[2fr_1fr] gap-[34px] mb-[30px]">
           <DontMiss news={entertainment} />
           <RecentNews news={news} />
         </div>
         <Entertainment news={entertainment} />
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34]">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-[34px]">
           <div className="flex flex-col gap-[50px]">
             <Sports news={sport} />
             <LifeStyle news={lifeStyle} />
             <PurchaseNow />
             <Video video={pixabayVideo} />
           </div>
-          <div className="flex flex-col gap-[24]">
+          <div className="flex flex-col gap-[24px]">
             <StayConnected />
             <Categories />
           </div>

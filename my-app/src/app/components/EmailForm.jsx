@@ -21,15 +21,15 @@ export default function EmailForm({ onSubmit, isNeedTitle, isFooterForm }) {
       {({ values }) => (
         <Form
           className={`${
-            !isFooterForm && 'bg-gray-300 p-[25]'
+            !isFooterForm && 'bg-gray-300 p-[25px]'
           } flex flex-col items-center`}
         >
           {isNeedTitle && (
-            <p className="text-lg text-[#2d2d2d] font-medium mb-[24]">
+            <p className="text-lg text-[#2d2d2d] font-medium mb-[24px]">
               {isNeedTitle}
             </p>
           )}
-          <div className="flex flex-col gap-[10] w-full">
+          <div className="flex flex-col gap-[10px] w-full">
             <InputField
               className="placeholder:text-[#2d2d2d]"
               required

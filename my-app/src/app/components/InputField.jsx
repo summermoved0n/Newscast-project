@@ -14,7 +14,7 @@ export default function InputField({ label, id, className = '', ...rest }) {
       <Field
         {...rest}
         id={id}
-        className={`${className} pl-[20] placeholder:text-center h-[40px] text-sm outline-none`}
+        className={`${className} pl-[20px] placeholder:text-center h-[40px] text-sm outline-none`}
       />
     </div>
   );
